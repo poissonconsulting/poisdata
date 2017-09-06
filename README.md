@@ -5,7 +5,7 @@
 poisdata
 ========
 
-A skeleton for Poisson Consulting packages.
+An R package to read and write data for Poisson Consulting scripts and packages.
 
 Demonstration
 -------------

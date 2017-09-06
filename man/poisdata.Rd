@@ -8,7 +8,7 @@
 \alias{poisdata-package}
 \title{poisdata}
 \description{
-Functions to read and write data for Poisson Consulting scripts and packages.
+Read and write data for Poisson Consulting scripts and packages.
 }
 \seealso{
 \url{https://github.com/poissonconsulting/poisdata}
