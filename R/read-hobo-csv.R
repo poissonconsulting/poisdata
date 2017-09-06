@@ -9,7 +9,7 @@ no_hobo_data <- function(tz) {
 }
 
 rename_hobo_data <- function(data, units) {
-  colnames(data)[3] <- paste0("Temperature_", units)
+  colnames(data)[3] <- str_c("Temperature_", units)
   data
 }
 
@@ -100,7 +100,7 @@ read_hobo_csv_file <- function(file, orders, units, tz, quiet) {
 #' @return A tibble of the data with the temperature.
 #' @export
 #' @examples
-#' read_hobo_csv(system.file("hobo", "10723440.csv", package = "poisutils"))
+#' read_hobo_csv(system.file("hobo", "10723440.csv", package = "poisdata"))
 read_hobo_csv <- function(file = ".", orders = c("Ymd HMS", "dmy HMS"),
                           units = "degC", tz = "Etc/GMT+8", recursive = FALSE,
                           quiet = FALSE) {

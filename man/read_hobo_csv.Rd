@@ -28,5 +28,5 @@ A tibble of the data with the temperature.
 Read Hobo CSVs
 }
 \examples{
-read_hobo_csv(system.file("hobo", "10723440.csv", package = "poisutils"))
+read_hobo_csv(system.file("hobo", "10723440.csv", package = "poisdata"))
 }

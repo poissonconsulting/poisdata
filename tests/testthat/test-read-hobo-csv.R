@@ -1,7 +1,7 @@
 context("read-hobo-csv")
 
 test_that("can read a single hobo csv file", {
-  data <- read_hobo_csv(system.file("hobo", "10723440.csv", package = "poisutils"), quiet = TRUE)
+  data <- read_hobo_csv(system.file("hobo", "10723440.csv", package = "poisdata"), quiet = TRUE)
   expect_is(data, "tbl")
   expect_identical(colnames(data), c("Logger", "DateTime", "Temperature_degC", "FileRow", "FileName", "Directory"))
   expect_identical(nrow(data), 11L)
@@ -12,7 +12,7 @@ test_that("can read a single hobo csv file", {
 })
 
 test_that("can read a single hobo csv file converting to farenheit and utc_offset 0", {
-  data <- read_hobo_csv(system.file("hobo", "10723440.csv", package = "poisutils"), quiet = TRUE, units = "degF", tz = "UTC")
+  data <- read_hobo_csv(system.file("hobo", "10723440.csv", package = "poisdata"), quiet = TRUE, units = "degF", tz = "UTC")
   expect_identical(colnames(data), c("Logger", "DateTime", "Temperature_degF", "FileRow", "FileName", "Directory"))
   expect_identical(nrow(data), 11L)
   expect_identical(lubridate::tz(data$DateTime), "UTC")
@@ -22,7 +22,7 @@ test_that("can read a single hobo csv file converting to farenheit and utc_offse
 })
 
 test_that("can read multiple hobo csv file", {
-  data <- read_hobo_csv(system.file("hobo", package = "poisutils"), quiet = TRUE, recursive = TRUE)
+  data <- read_hobo_csv(system.file("hobo", package = "poisdata"), quiet = TRUE, recursive = TRUE)
   expect_is(data, "tbl")
   expect_identical(colnames(data), c("Logger", "DateTime", "Temperature_degC", "FileRow", "FileName", "Directory"))
   expect_identical(nrow(data), 49L)

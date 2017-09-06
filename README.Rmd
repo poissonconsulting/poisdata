@@ -28,10 +28,7 @@ A skeleton for Poisson Consulting packages.
 ```{r demonstration}
 library(poisdata)
 
-x <- 1
-is.named(x)
-names(x) <- "one"
-is.named(x)
+read_hobo_csv(system.file("hobo", "10723440.csv", package = "poisdata"))
 ```
 
 ## Installation
