@@ -1,0 +1,26 @@
+Package: poisdata
+Title: Read and Write Data
+Version: 0.0.0.9000
+Date: 2017-09-06
+Authors@R: person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre"))
+Description: Functions to read and write data for Poisson Consulting scripts and packages.
+License: MIT + file LICENSE
+Depends:  R (>= 3.3.0)
+Imports:  datacheckr,
+          dplyr,
+          lubridate,
+          magrittr,
+          poisutils,
+          readr,
+          stringr,
+          udunits2,
+          yesno
+Suggests: testthat,
+          covr
+Remotes:  poissonconsulting/poisutils,
+          poissonconsulting/datacheckr
+URL: https://github.com/poissonconsulting/poisdata
+BugReports: https://github.com/poissonconsulting/poisdata/issues
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
