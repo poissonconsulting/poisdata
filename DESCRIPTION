@@ -1,7 +1,7 @@
 Package: poisdata
 Title: Read and Write Data
-Version: 0.0.0.9000
-Date: 2017-09-06
+Version: 0.0.0.9001
+Date: 2017-09-25
 Authors@R: person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre"))
 Description: Functions to read and write data for Poisson Consulting scripts and packages.
 License: MIT + file LICENSE
@@ -11,6 +11,7 @@ Imports:  datacheckr,
           lubridate,
           magrittr,
           poisutils,
+          purrr,
           readr,
           stringr,
           udunits2,

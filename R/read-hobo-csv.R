@@ -15,7 +15,7 @@ rename_hobo_data <- function(data, units) {
 
 check_hobo_csv_data_colname <- function(colnames, pattern, which, file) {
   if (!str_detect(colnames[which], pattern))
-    error("Column '", colnames[which], "' in file '", file, "', does not match the regular expression '", pattern, "'")
+    ps_error("Column '", colnames[which], "' in file '", file, "', does not match the regular expression '", pattern, "'")
 }
 
 check_hobo_csv_data_colnames <- function(data, file) {
