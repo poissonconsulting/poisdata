@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • poisdata</title>
+<title>Duplicates — ps_duplicates • poisdata</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -37,7 +37,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -78,64 +78,44 @@
       </header>
 
       <div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>
-        Reference
-        <small>version&nbsp;0.0.0.9001</small>
-      </h1>
+    <h1>Duplicates</h1>
     </div>
 
-    <div class="contents">
-      <table class="ref-index">
+    
+    <p>Duplicates</p>
+    
 
-      <colgroup>
-        <col class="alias" />
-        <col class="title" />
-      </colgroup>
+    <pre class="usage"><span class='fu'>ps_duplicates</span>(<span class='no'>x</span>, <span class='kw'>cols</span> <span class='kw'>=</span> <span class='fu'>colnames</span>(<span class='no'>x</span>))</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>A data.frame.</p></td>
+    </tr>
+    <tr>
+      <th>cols</th>
+      <td><p>A character vector of the column names.</p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-      <tbody>
-        <tr>
-          <th colspan="2">
-            <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-            <p class="section-desc"></p>
-          </th>
-        </tr>
-        <tr>
-          <!--  -->
-          <td>
-            <p><code><a href="poisdata.html">poisdata</a></code> </p>
-          </td>
-          <td><p>poisdata</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="ps_duplicates.html">ps_duplicates</a></code> </p>
-          </td>
-          <td><p>Duplicates</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="ps_load_csvs.html">ps_load_csvs</a></code> </p>
-          </td>
-          <td><p>Load CSVs</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="read_hobo_csv.html">read_hobo_csv</a></code> </p>
-          </td>
-          <td><p>Read Hobo CSVs</p></td>
-        </tr>
-      </tbody>
-      </table>
-    </div>
+    <p>A tibble with just the duplicate rows included.</p>
+    
+
   </div>
-
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
-    </ul>
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
+
   </div>
 </div>
 
