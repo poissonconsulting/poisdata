@@ -2,6 +2,7 @@
 
 export(ps_duplicates)
 export(ps_load_csvs)
+export(ps_load_excel)
 export(read_hobo_csv)
 import(datacheckr)
 import(dplyr)
