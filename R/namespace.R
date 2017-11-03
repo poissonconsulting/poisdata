@@ -6,6 +6,5 @@
 #' @importFrom udunits2 ud.convert
 #' @importFrom yesno yesno
 #' @importFrom methods as
-#' @importFrom poisspatial ps_coords_to_sfc ps_activate_sfc
 
 NULL

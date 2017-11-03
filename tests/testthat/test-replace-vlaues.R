@@ -11,8 +11,7 @@ test_that("replaces values for columns with identical class to from vector", {
   expect_true(any(!is.na(x2$cyl)))
 
   # works for sf objects
-  xsf <- poisspatial::ps_coords_to_sfc(x, coords = c("wt", "qsec"), crs = 4326) %>%
-    ps_activate_sfc()
+  xsf <- readRDS(system.file("sf/x.rds", package = "poisdata"))
   expect_is(xsf, "sf")
   xsf2 <- ps_replace_values(xsf, from = 6, to = NA_real_)
   expect_identical(class(xsf$cylf), class(xsf2$cylf))
