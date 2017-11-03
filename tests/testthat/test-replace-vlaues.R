@@ -1,9 +1,24 @@
 context("replace-values")
 
-test_that("replaces values and retains class", {
-  x <- mtcars
-  ccyl <- class(x$cyl)
-  x %<>% ps_replace_values(columns = c("mpg", "cyl", "disp", "hp"), from = 6, to = NA_character_)
-  expect_true(x$cyl != 6 || is.na(x$cyl))
-  expect_identical(ccyl, class(x$cyl))
+test_that("replaces values for columns with identical class to from vector", {
+  x <- readRDS(system.file("df/df.rds", package = "poisdata"))
+  x$cylf <- as.character(x$cyl)
+  x2 <-  ps_replace_values(x, from = 6, to = NA_real_)
+  # retains class
+  expect_identical(class(x$cylf), class(x2$cylf))
+  # certain columns
+  x2 <- ps_replace_values(x, columns = c("mpg"), from = 6, to = NA_real_)
+  expect_true(any(!is.na(x2$cyl)))
+
+  # works for sf objects
+  xsf <- poisspatial::ps_coords_to_sfc(x, coords = c("wt", "qsec"), crs = 4326) %>%
+    ps_activate_sfc()
+  expect_is(xsf, "sf")
+  xsf2 <- ps_replace_values(xsf, from = 6, to = NA_real_)
+  expect_identical(class(xsf$cylf), class(xsf2$cylf))
+  expect_is(xsf2, "sf")
+  # check that different to class does not change class of all columns
+  xsf2 <- ps_replace_values(xsf, from = 6, to = "6")
+  expect_is(xsf2$mpg, "numeric")
+
 })
