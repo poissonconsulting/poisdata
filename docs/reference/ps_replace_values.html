@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Duplicates — ps_duplicates • poisdata</title>
+<title>Replace values over set of columns — ps_replace_values • poisdata</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -80,31 +80,39 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Duplicates</h1>
+    <h1>Replace values over set of columns</h1>
     </div>
 
     
-    <p>Duplicates</p>
+    <p>From argument may contain multiple values. Class of column is retained even if replacement value is of different class.</p>
     
 
-    <pre class="usage"><span class='fu'>ps_duplicates</span>(<span class='no'>x</span>, <span class='kw'>cols</span> <span class='kw'>=</span> <span class='fu'>colnames</span>(<span class='no'>x</span>))</pre>
+    <pre class="usage"><span class='fu'>ps_replace_values</span>(<span class='no'>x</span>, <span class='kw'>columns</span> <span class='kw'>=</span> <span class='fu'>names</span>(<span class='no'>x</span>), <span class='no'>from</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='fl'>NA</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>A data.frame.</p></td>
+      <td><p>A data.frame or tbl object.</p></td>
     </tr>
     <tr>
-      <th>cols</th>
-      <td><p>A character vector of the column names.</p></td>
+      <th>columns</th>
+      <td><p>A vector of chracter strings indicating columns to modify.</p></td>
+    </tr>
+    <tr>
+      <th>from</th>
+      <td><p>A vector of values to be replaced.</p></td>
+    </tr>
+    <tr>
+      <th>to</th>
+      <td><p>A value to replace with.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble with just the duplicate rows included.</p>
+    <p>The modified object.</p>
     
 
   </div>
