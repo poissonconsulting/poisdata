@@ -4,7 +4,7 @@
 \alias{ps_replace_values}
 \title{Replace values over set of columns}
 \usage{
-ps_replace_values(x, columns = names(x), from, to = NA)
+ps_replace_values(x, columns = names(x), from, to = NA_character_)
 }
 \arguments{
 \item{x}{A data.frame or tbl object.}
