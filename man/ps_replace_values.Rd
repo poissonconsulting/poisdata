@@ -7,9 +7,9 @@
 ps_replace_values(x, columns = names(x), from, to = NA_character_)
 }
 \arguments{
-\item{x}{A data.frame or tbl object.}
+\item{x}{A data.frame, tibble, or sf object.}
 
-\item{columns}{A vector of chracter strings indicating columns to modify.}
+\item{columns}{A vector of character strings indicating columns to modify.}
 
 \item{from}{A vector of values to be replaced.}
 
@@ -19,5 +19,5 @@ ps_replace_values(x, columns = names(x), from, to = NA_character_)
 The modified object.
 }
 \description{
-From argument may contain multiple values. Class of column is retained even if replacement value is of different class.
+From argument may contain multiple values. Class of column is retained, except if coerced by replacement value.
 }
