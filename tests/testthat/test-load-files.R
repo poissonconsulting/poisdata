@@ -8,3 +8,9 @@ test_that("can read multiple hobo csv file", {
 
   expect_identical(sort(ls()), sort(c("Ex13", "files", "folder123.10723450", "M10",                "M2", "M3", "MBB1", "X10328118", "X10328122", "X10723440")))
 })
+
+test_that("can bind multiple file", {
+  data <- ps_load_files(system.file("hobo", package = "poisdata"), recursive = TRUE, bind = TRUE)
+
+  expect_is(data, "tbl")
+})
