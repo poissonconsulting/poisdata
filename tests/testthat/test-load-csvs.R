@@ -6,5 +6,6 @@ test_that("can read multiple hobo csv file", {
                                  "Ex13.csv", "folder123/10723450.csv", "M10.csv",
                                  "M2.csv", "M3.csv", "MBB1.csv")))
 
-  expect_identical(sort(ls()), sort(c("Ex13", "files", "folder123.10723450", "M10",                "M2", "M3", "MBB1", "X10328118", "X10328122", "X10723440")))
+  expect_identical(sort(ls()), sort(c("Ex13", "files", "folder123.10723450", "M10",
+                                      "M2", "M3", "MBB1", "X10328118", "X10328122", "X10723440")))
 })
