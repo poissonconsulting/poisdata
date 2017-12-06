@@ -43,20 +43,42 @@ ps_load_files <- function(dir = ".",
                       recursive = recursive)
   if (!length(files)) {
     ps_warning("no files found")
-    return(invisible(character(0)))
+    if(!bind) return(invisible(character(0)))
+    return(tibble::data_frame())
   }
 
-  data <- purrr::map(file_names, read, ...)
+  read2 <- function(x, ...) {
+    try(x <- read(x, ...))
+    x
+  }
+
+  data <- purrr::map(file_names, read2, ...)
 
   names(data) <- files  %>%
     tools::file_path_sans_ext() %>%
     rename() %>%
     make.names(unique = TRUE)
 
+  fail <- purrr::map_lgl(data, is.character)
+
+  if(any(fail)) {
+    failed <- data[fail] %>% unlist()
+    ps_warning("the following ", ps_plural("file", length(failed)), " failed to read:", ps_punctuate(failed, "and"))
+  }
+
+  data <- data[!fail]
+
+  if (!length(data)) {
+    ps_warning("no readable files")
+    if(!bind) return(invisible(character(0)))
+    return(tibble::data_frame())
+  }
+
   if(!bind) {
     purrr::imap(data, function(x, name) {assign(name, x, envir = envir)})
     return(invisible(files))
   }
+  if(identical(length(data), 1L)) return(data[[1]])
   data %<>% dplyr::bind_rows()
   data
 }
