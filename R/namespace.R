@@ -1,4 +1,4 @@
-#' @import datacheckr dplyr
+#' @import checkr dplyr
 #' @importFrom magrittr %<>% %>%
 #' @importFrom stringr str_c str_replace str_detect str_extract
 #' @importFrom poisutils ps_message ps_warning ps_error

@@ -4,13 +4,11 @@
 \alias{ps_load_csvs}
 \title{Load CSVs}
 \usage{
-ps_load_csvs(dir = ".", pattern = "[.]csv$", recursive = FALSE,
-  rename = identity, envir = parent.frame(), ...)
+ps_load_csvs(dir = ".", recursive = FALSE, rename = identity,
+  envir = parent.frame(), ...)
 }
 \arguments{
 \item{dir}{A string of the directory.}
-
-\item{pattern}{A string of the regular expression to use to identify files.}
 
 \item{recursive}{A flag indicating whether to include files in subdirectories.}
 

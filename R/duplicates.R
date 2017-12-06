@@ -5,9 +5,9 @@
 #' @return A tibble with just the duplicate rows included.
 #' @export
 ps_duplicates <- function(x, cols = colnames(x)) {
-  check_data1(x)
+  check_data(x)
   check_vector(cols, "")
-  check_cols(x, cols)
+  check_colnames(x, cols)
 
   cols %<>% unique()
 

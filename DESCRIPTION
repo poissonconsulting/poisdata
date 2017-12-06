@@ -8,7 +8,7 @@ Authors@R: c(
 Description: Functions to read and write data for Poisson Consulting scripts and packages.
 License: MIT + file LICENSE
 Depends:  R (>= 3.3.0)
-Imports:  datacheckr,
+Imports:  checkr,
           dplyr,
           lubridate,
           magrittr,

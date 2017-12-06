@@ -1,20 +1,36 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg)](https://github.com/joethorley/stability-badges#experimental) [![Travis-CI Build Status](https://travis-ci.org/poissonconsulting/poisdata.svg?branch=master)](https://travis-ci.org/poissonconsulting/poisdata) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/poisdata?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/poisdata) [![Coverage Status](https://img.shields.io/codecov/c/github/poissonconsulting/poisdata/master.svg)](https://codecov.io/github/poissonconsulting/poisdata?branch=master) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/poisdata)](https://cran.r-project.org/package=poisdata)
 
-poisdata
-========
+[![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg)](https://github.com/joethorley/stability-badges#experimental)
+[![Travis-CI Build
+Status](https://travis-ci.org/poissonconsulting/poisdata.svg?branch=master)](https://travis-ci.org/poissonconsulting/poisdata)
+[![AppVeyor Build
+Status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/poisdata?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/poisdata)
+[![Coverage
+Status](https://img.shields.io/codecov/c/github/poissonconsulting/poisdata/master.svg)](https://codecov.io/github/poissonconsulting/poisdata?branch=master)
+[![License:
+MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/poisdata)](https://cran.r-project.org/package=poisdata)
 
-An R package to read and write data for Poisson Consulting scripts and packages.
+# poisdata
 
-Demonstration
--------------
+An R package to read and write data for Poisson Consulting scripts and
+packages.
+
+## Demonstration
 
 ``` r
 library(poisdata)
 
 read_hobo_csv(system.file("hobo", "10723440.csv", package = "poisdata"))
+#> Warning in as.POSIXlt.POSIXct(x, tz): unknown timezone 'default/America/
+#> Vancouver'
 #> imported 11 rows of data from '/Library/Frameworks/R.framework/Versions/3.4/Resources/library/poisdata/hobo/10723440.csv'
+#> Warning in as.POSIXlt.POSIXct(x, tz): unknown timezone 'default/America/
+#> Vancouver'
+
+#> Warning in as.POSIXlt.POSIXct(x, tz): unknown timezone 'default/America/
+#> Vancouver'
 #> # A tibble: 11 x 6
 #>      Logger            DateTime Temperature_degC FileRow FileName
 #>       <chr>              <dttm>            <dbl>   <int>    <chr>
@@ -32,19 +48,21 @@ read_hobo_csv(system.file("hobo", "10723440.csv", package = "poisdata"))
 #> # ... with 1 more variables: Directory <chr>
 ```
 
-Installation
-------------
+## Installation
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("poissonconsulting/poisdata")
 ```
 
-Contribution
-------------
+## Contribution
 
-Please report any [issues](https://github.com/poissonconsulting/poisdata/issues).
+Please report any
+[issues](https://github.com/poissonconsulting/poisdata/issues).
 
-[Pull requests](https://github.com/poissonconsulting/poisdata/pulls) are always welcome.
+[Pull requests](https://github.com/poissonconsulting/poisdata/pulls) are
+always welcome.
 
-Please note that this project is released with a [Contributor Code of Conduct](https://github.com/poissonconsulting/poisdata/blob/master/CONDUCT.md). By participating in this project you agree to abide by its terms.
+Please note that this project is released with a [Contributor Code of
+Conduct](https://github.com/poissonconsulting/poisdata/blob/master/CONDUCT.md).
+By participating in this project you agree to abide by its terms.
