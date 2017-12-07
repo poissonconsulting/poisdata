@@ -5,8 +5,7 @@
 \title{Load Files}
 \usage{
 ps_load_files(dir = ".", pattern = "[.]csv$", recursive = FALSE,
-  read = readr::read_csv, bind = FALSE, rename = identity,
-  envir = parent.frame(), ...)
+  read = readr::read_csv, rename = identity, envir = parent.frame(), ...)
 }
 \arguments{
 \item{dir}{A string of the directory.}
@@ -17,8 +16,6 @@ ps_load_files(dir = ".", pattern = "[.]csv$", recursive = FALSE,
 
 \item{read}{A function to read the files.}
 
-\item{bind}{A flag indicating whether to bind and return the data.}
-
 \item{rename}{A function that is used to rename files (after removing the extension) before they are passed to \code{make.names}.}
 
 \item{envir}{The environment to assign the data frames.}
@@ -26,7 +23,7 @@ ps_load_files(dir = ".", pattern = "[.]csv$", recursive = FALSE,
 \item{...}{Additional arguments passed to \code{read}.}
 }
 \value{
-An invisible character vector of the file names or a tibble of the bound data.
+An invisible character vector of the file names.
 }
 \description{
 By default reads all files in the directory dir that match the pattern
@@ -34,8 +31,4 @@ using \code{read_csv} and loads them into the
 calling environment after renaming using \code{make.names(unique = TRUE)}.
 It is useful for quickly loading the data in a set of files into the workspace
 (just call the function at the top level of a script).
-}
-\details{
-If bind = TRUE it returns the bound data and does not load the individual
-data.
 }

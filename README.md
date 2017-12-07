@@ -23,14 +23,7 @@ packages.
 library(poisdata)
 
 read_hobo_csv(system.file("hobo", "10723440.csv", package = "poisdata"))
-#> Warning in as.POSIXlt.POSIXct(x, tz): unknown timezone 'default/America/
-#> Vancouver'
 #> imported 11 rows of data from '/Library/Frameworks/R.framework/Versions/3.4/Resources/library/poisdata/hobo/10723440.csv'
-#> Warning in as.POSIXlt.POSIXct(x, tz): unknown timezone 'default/America/
-#> Vancouver'
-
-#> Warning in as.POSIXlt.POSIXct(x, tz): unknown timezone 'default/America/
-#> Vancouver'
 #> # A tibble: 11 x 6
 #>      Logger            DateTime Temperature_degC FileRow FileName
 #>       <chr>              <dttm>            <dbl>   <int>    <chr>
