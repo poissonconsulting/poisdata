@@ -5,7 +5,8 @@
 \title{Load Files}
 \usage{
 ps_load_files(dir = ".", pattern = "[.]csv$", recursive = FALSE,
-  read = readr::read_csv, rename = identity, envir = parent.frame(), ...)
+  read = readr::read_csv, add_name = NULL, rename = identity,
+  envir = parent.frame(), ...)
 }
 \arguments{
 \item{dir}{A string of the directory.}
@@ -15,6 +16,8 @@ ps_load_files(dir = ".", pattern = "[.]csv$", recursive = FALSE,
 \item{recursive}{A flag indicating whether to include files in subdirectories.}
 
 \item{read}{A function to read the files.}
+
+\item{add_name}{A string specifying the name of the column to add to each data frame with the file names (including subdirectories).}
 
 \item{rename}{A function that is used to rename files (after removing the extension) before they are passed to \code{make.names}.}
 

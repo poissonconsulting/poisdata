@@ -5,7 +5,7 @@
 \title{Bind Data}
 \usage{
 ps_bind_files(dir = ".", pattern = "[.]csv$", recursive = FALSE,
-  read = readr::read_csv, ...)
+  add_name = NULL, read = readr::read_csv, ...)
 }
 \arguments{
 \item{dir}{A string of the directory.}
@@ -13,6 +13,8 @@ ps_bind_files(dir = ".", pattern = "[.]csv$", recursive = FALSE,
 \item{pattern}{A string of the regular expression to use to identify files.}
 
 \item{recursive}{A flag indicating whether to include files in subdirectories.}
+
+\item{add_name}{A string specifying the name of the column to add to each data frame with the file names (including subdirectories).}
 
 \item{read}{A function to read the files.}
 

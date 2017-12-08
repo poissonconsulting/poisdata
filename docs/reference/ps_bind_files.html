@@ -88,7 +88,7 @@
     
 
     <pre class="usage"><span class='fu'>ps_bind_files</span>(<span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"."</span>, <span class='kw'>pattern</span> <span class='kw'>=</span> <span class='st'>"[.]csv$"</span>, <span class='kw'>recursive</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>read</span> <span class='kw'>=</span> <span class='kw pkg'>readr</span><span class='kw ns'>::</span><span class='no'><a href='http://www.rdocumentation.org/packages/readr/topics/read_delim'>read_csv</a></span>, <span class='no'>...</span>)</pre>
+  <span class='kw'>add_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>read</span> <span class='kw'>=</span> <span class='kw pkg'>readr</span><span class='kw ns'>::</span><span class='no'><a href='http://www.rdocumentation.org/packages/readr/topics/read_delim'>read_csv</a></span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -104,6 +104,10 @@
     <tr>
       <th>recursive</th>
       <td><p>A flag indicating whether to include files in subdirectories.</p></td>
+    </tr>
+    <tr>
+      <th>add_name</th>
+      <td><p>A string specifying the name of the column to add to each data frame with the file names (including subdirectories).</p></td>
     </tr>
     <tr>
       <th>read</th>

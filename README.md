@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-[![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg)](https://github.com/joethorley/stability-badges#experimental)
+[![stability-unstable](https://img.shields.io/badge/stability-unstable-yellow.svg)](https://github.com/joethorley/stability-badges#unstable)
 [![Travis-CI Build
 Status](https://travis-ci.org/poissonconsulting/poisdata.svg?branch=master)](https://travis-ci.org/poissonconsulting/poisdata)
 [![AppVeyor Build
@@ -43,10 +43,17 @@ read_hobo_csv(system.file("hobo", "10723440.csv", package = "poisdata"))
 
 ## Installation
 
-``` r
-# install.packages("devtools")
-devtools::install_github("poissonconsulting/poisdata")
-```
+`poisdata` is available from GitHub
+
+    # install.packages("devtools")
+    devtools::install_github("poissonconsulting/poisdata")
+
+or the Poisson R Archive Site
+([PoisRAS](https://github.com/poissonconsulting/drat))
+
+    # install.packages("drat")
+    drat::addRepo("poissonconsulting")
+    install.packages("poisdata")
 
 ## Contribution
 

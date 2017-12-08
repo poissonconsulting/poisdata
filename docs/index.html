@@ -88,8 +88,13 @@
 <div class="sourceLine" id="cb1-18" data-line-number="18"><span class="co">#&gt; 11 10723440 2016-04-09 04:43:12            3.932      12 10723440</span></div>
 <div class="sourceLine" id="cb1-19" data-line-number="19"><span class="co">#&gt; # ... with 1 more variables: Directory &lt;chr&gt;</span></div></code></pre>
 </section><section id="installation" class="level2"><h2>Installation</h2>
-<pre class="sourceCode r" id="cb2"><code class="sourceCode r"><div class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># install.packages("devtools")</span></div>
-<div class="sourceLine" id="cb2-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"poissonconsulting/poisdata"</span>)</div></code></pre>
+<p><code>poisdata</code> is available from GitHub</p>
+<pre><code><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github"># install.packages("devtools")
+devtools::install_github("poissonconsulting/poisdata")</a></code></pre>
+<p>or the Poisson R Archive Site (<a href="https://github.com/poissonconsulting/drat">PoisRAS</a>)</p>
+<pre><code><a href="http://www.rdocumentation.org/packages/drat/topics/addRepo"># install.packages("drat")
+drat::addRepo("poissonconsulting")
+install.packages("poisdata")</a></code></pre>
 </section><section id="contribution" class="level2"><h2>Contribution</h2>
 <p>Please report any <a href="https://github.com/poissonconsulting/poisdata/issues">issues</a>.</p>
 <p><a href="https://github.com/poissonconsulting/poisdata/pulls">Pull requests</a> are always welcome.</p>
@@ -116,7 +121,7 @@
 </ul>
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/joethorley/stability-badges#experimental"><img src="https://img.shields.io/badge/stability-experimental-orange.svg" alt="stability-experimental"></a></li>
+<li><a href="https://github.com/joethorley/stability-badges#unstable"><img src="https://img.shields.io/badge/stability-unstable-yellow.svg" alt="stability-unstable"></a></li>
 <li><a href="https://travis-ci.org/poissonconsulting/poisdata"><img src="https://travis-ci.org/poissonconsulting/poisdata.svg?branch=master" alt="Travis-CI Build Status"></a></li>
 <li><a href="https://ci.appveyor.com/project/poissonconsulting/poisdata"><img src="https://ci.appveyor.com/api/projects/status/github/poissonconsulting/poisdata?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a></li>
 <li><a href="https://codecov.io/github/poissonconsulting/poisdata?branch=master"><img src="https://img.shields.io/codecov/c/github/poissonconsulting/poisdata/master.svg" alt="Coverage Status"></a></li>

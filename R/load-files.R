@@ -10,6 +10,7 @@
 #' @param pattern A string of the regular expression to use to identify files.
 #' @param recursive A flag indicating whether to include files in subdirectories.
 #' @param read A function to read the files.
+#' @param add_name A string specifying the name of the column to add to each data frame with the file names (including subdirectories).
 #' @param rename A function that is used to rename files (after removing the extension) before they are passed to \code{make.names}.
 #' @param envir The environment to assign the data frames.
 #' @param ... Additional arguments passed to \code{read}.
@@ -19,6 +20,7 @@ ps_load_files <- function(dir = ".",
                           pattern = "[.]csv$",
                           recursive = FALSE,
                           read = readr::read_csv,
+                          add_name = NULL,
                           rename = identity,
                           envir = parent.frame(), ...) {
 
@@ -26,6 +28,7 @@ ps_load_files <- function(dir = ".",
   check_string(pattern)
   check_flag(recursive)
   check_function(read, nargs = c(1L, .Machine$integer.max))
+  checkor(check_null(add_name), check_string(add_name))
   check_function(rename, nargs = c(1L, .Machine$integer.max))
   check_environment(envir)
 
@@ -47,10 +50,7 @@ ps_load_files <- function(dir = ".",
 
   data <- purrr::map(file_names, read2, ...)
 
-  names(data) <- files  %>%
-    tools::file_path_sans_ext() %>%
-    rename() %>%
-    make.names(unique = TRUE)
+  names(data) <- files
 
   fail <- purrr::map_lgl(data, is.character)
 
@@ -65,6 +65,14 @@ ps_load_files <- function(dir = ".",
     ps_warning("no readable files")
     return(invisible(character(0)))
   }
+
+  if(!is.null(add_name))
+    data %<>% purrr::imap(function(x, name) {x[add_name] <- name; x})
+
+  names(data) %<>%
+    tools::file_path_sans_ext() %>%
+    rename() %>%
+    make.names(unique = TRUE)
 
   purrr::imap(data, function(x, name) {assign(name, x, envir = envir)})
   invisible(files)

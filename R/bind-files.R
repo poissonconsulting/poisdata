@@ -8,11 +8,12 @@
 ps_bind_files <- function(dir = ".",
                           pattern = "[.]csv$",
                           recursive = FALSE,
+                          add_name = NULL,
                           read = readr::read_csv,
                           ...) {
 
   ps_load_files(dir = dir, pattern = pattern, recursive = recursive,
-                read = read, ...)
+                read = read, add_name = add_name, ...)
 
   ps_bind_datas()
 }
