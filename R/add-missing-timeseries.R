@@ -27,6 +27,7 @@ ps_add_missing_datetimes <- function(x, datetime = "DateTime") {
   if(!nrow(x)) return(x)
 
   new <- tibble::data_frame(DateTime = seq_datetime(x[[datetime]]))
+  colnames(new) <- datetime
   x %<>% dplyr::left_join(new, ., by = datetime) %>%
     dplyr::arrange(UQ(parse_quosure(datetime)))
   x
