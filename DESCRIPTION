@@ -1,7 +1,7 @@
 Package: poisdata
 Title: Read and Write Data
-Version: 0.0.0.9006
-Date: 2017-12-08
+Version: 0.0.0.9007
+Date: 2017-12-12
 Authors@R: c(
     person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre")),
     person("Seb", "Dalgarno", role = "aut"))
@@ -19,6 +19,7 @@ Imports:  checkr,
           purrr,
           readr,
           readxl,
+          rlang,
           stringr,
           tibble,
           udunits2,

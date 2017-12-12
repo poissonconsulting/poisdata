@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • poisdata</title>
+<title>Add Missing Date Times. — ps_add_missing_datetimes • poisdata</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -37,7 +37,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -78,106 +78,59 @@
       </header>
 
       <div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>
-        Reference
-        <small>version&nbsp;0.0.0.9007</small>
-      </h1>
+    <h1>Add Missing Date Times.</h1>
     </div>
 
-    <div class="contents">
-      <table class="ref-index">
+    
+    <p>Adds missing datetimes to a data frame.
+All missing datetimes between the first and last datetime
+with the smallest interval
+in the data are added.</p>
+    
 
-      <colgroup>
-        <col class="alias" />
-        <col class="title" />
-      </colgroup>
+    <pre class="usage"><span class='fu'>ps_add_missing_datetimes</span>(<span class='no'>x</span>, <span class='kw'>datetime</span> <span class='kw'>=</span> <span class='st'>"DateTime"</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>The data.frame.</p></td>
+    </tr>
+    <tr>
+      <th>datetime</th>
+      <td><p>A string naming the POSIXt column.</p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-      <tbody>
-        <tr>
-          <th colspan="2">
-            <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-            <p class="section-desc"></p>
-          </th>
-        </tr>
-        <tr>
-          <!--  -->
-          <td>
-            <p><code><a href="poisdata.html">poisdata</a></code> </p>
-          </td>
-          <td><p>poisdata</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="ps_add_missing_datetimes.html">ps_add_missing_datetimes</a></code> </p>
-          </td>
-          <td><p>Add Missing Date Times.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="ps_bind_datas.html">ps_bind_datas</a></code> </p>
-          </td>
-          <td><p>Bind Data</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="ps_bind_files.html">ps_bind_files</a></code> </p>
-          </td>
-          <td><p>Bind Data</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="ps_duplicates.html">ps_duplicates</a></code> </p>
-          </td>
-          <td><p>Duplicates</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="ps_load_csvs.html">ps_load_csvs</a></code> </p>
-          </td>
-          <td><p>Load CSVs</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="ps_load_excel.html">ps_load_excel</a></code> </p>
-          </td>
-          <td><p>Load Excel sheets</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="ps_load_files.html">ps_load_files</a></code> </p>
-          </td>
-          <td><p>Load Files</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="ps_names_datas.html">ps_names_datas</a></code> </p>
-          </td>
-          <td><p>Names Data Frames</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="ps_replace_values.html">ps_replace_values</a></code> </p>
-          </td>
-          <td><p>Replace values over set of columns</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="read_hobo_csv.html">read_hobo_csv</a></code> </p>
-          </td>
-          <td><p>Read Hobo CSVs</p></td>
-        </tr>
-      </tbody>
-      </table>
-    </div>
+    <p>A tbl data frame sorted by DateTime.</p>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>datetime</span> <span class='kw'>&lt;-</span> <span class='fu'>as.POSIXct</span>(<span class='st'>"2001-01-02 03:04:06"</span>) + <span class='fu'>c</span>(<span class='fl'>1</span>,<span class='fl'>3</span>,<span class='fl'>9</span>)
+<span class='fu'>ps_add_missing_datetimes</span>(<span class='fu'>data.frame</span>(<span class='kw'>DateTime</span> <span class='kw'>=</span> <span class='no'>datetime</span>, <span class='kw'>Value</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>1</span>,<span class='fl'>3</span>,<span class='fl'>9</span>)))</div><div class='output co'>#&gt; # A tibble: 5 x 2
+#&gt;              DateTime Value
+#&gt;                &lt;dttm&gt; &lt;dbl&gt;
+#&gt; 1 2001-01-02 03:04:07     1
+#&gt; 2 2001-01-02 03:04:09     3
+#&gt; 3 2001-01-02 03:04:11    NA
+#&gt; 4 2001-01-02 03:04:13    NA
+#&gt; 5 2001-01-02 03:04:15     9</div></pre>
   </div>
-
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
     </ul>
+
   </div>
 </div>
 
