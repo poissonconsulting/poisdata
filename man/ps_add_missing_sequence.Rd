@@ -4,7 +4,7 @@
 \alias{ps_add_missing_sequence}
 \title{Add Missing Sequence.}
 \usage{
-ps_add_missing_sequence(x, sequence, by = character(0))
+ps_add_missing_sequence(x, sequence = "DateTime", by = character(0))
 }
 \arguments{
 \item{x}{The data.frame.}
@@ -24,5 +24,5 @@ in the data are added.
 }
 \examples{
 datetime <- as.POSIXct("2001-01-02 03:04:06") + c(1,3,9)
-ps_add_missing_sequence(data.frame(DateTime = datetime, Value = c(1,3,9)), "DateTime")
+ps_add_missing_sequence(data.frame(DateTime = datetime, Value = c(1,3,9)))
 }
