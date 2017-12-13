@@ -5,7 +5,7 @@
 \title{Interpolate Sequence}
 \usage{
 ps_interpolate_sequence(x, sequence = "DateTime", value = "Value",
-  by = character(0), method = "linear", step = 0.5)
+  by = character(0), max_gap = 10L, method = "linear", step = 0.5)
 }
 \arguments{
 \item{x}{The data.frame.}
@@ -15,6 +15,8 @@ ps_interpolate_sequence(x, sequence = "DateTime", value = "Value",
 \item{value}{A character vector of the value column.}
 
 \item{by}{A character vector of columns to interpolate by.}
+
+\item{max_gap}{A count of the maximum gap to interpolate within.}
 
 \item{method}{A string specifying the method (linear or constant).}
 

@@ -21,14 +21,15 @@ knitr::opts_chunk$set(
 
 # poisdata
 
-An R package to read and write data for Poisson Consulting scripts and packages.
+An R package to read, write and manipulate data frames.
 
 ## Demonstration
 
 ```{r demonstration}
 library(poisdata)
-
-read_hobo_csv(system.file("hobo", "10723440.csv", package = "poisdata"))
+datetime <- as.POSIXct("2001-01-02 03:04:06") + c(1:10)
+data <- data.frame(DateTime = datetime, Value = c(1,NA,3,NA,NA,3,NA,NA,NA,7))
+ps_interpolate_sequence(data)
 ```
 
 ## Installation
@@ -39,7 +40,7 @@ read_hobo_csv(system.file("hobo", "10723440.csv", package = "poisdata"))
 devtools::install_github("poissonconsulting/poisdata")
 ```
 
-or the Poisson R Archive Site ([PoisRAS](https://github.com/poissonconsulting/drat))
+or the Poisson R Archive Network ([PoisRAN](https://github.com/poissonconsulting/drat))
 ```
 # install.packages("drat")
 drat::addRepo("poissonconsulting")

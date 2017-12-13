@@ -88,7 +88,7 @@
     
 
     <pre class="usage"><span class='fu'>ps_interpolate_sequence</span>(<span class='no'>x</span>, <span class='kw'>sequence</span> <span class='kw'>=</span> <span class='st'>"DateTime"</span>, <span class='kw'>value</span> <span class='kw'>=</span> <span class='st'>"Value"</span>,
-  <span class='kw'>by</span> <span class='kw'>=</span> <span class='fu'>character</span>(<span class='fl'>0</span>), <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"linear"</span>, <span class='kw'>step</span> <span class='kw'>=</span> <span class='fl'>0.5</span>)</pre>
+  <span class='kw'>by</span> <span class='kw'>=</span> <span class='fu'>character</span>(<span class='fl'>0</span>), <span class='kw'>max_gap</span> <span class='kw'>=</span> <span class='fl'>10L</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"linear"</span>, <span class='kw'>step</span> <span class='kw'>=</span> <span class='fl'>0.5</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -108,6 +108,10 @@
     <tr>
       <th>by</th>
       <td><p>A character vector of columns to interpolate by.</p></td>
+    </tr>
+    <tr>
+      <th>max_gap</th>
+      <td><p>A count of the maximum gap to interpolate within.</p></td>
     </tr>
     <tr>
       <th>method</th>
