@@ -31,21 +31,26 @@ ps_add_missing_datetimes <- function(x, datetime = "DateTime", by = character(0)
 
   if(!nrow(x)) return(x)
 
+  colnames <- colnames(x)
+
   # no bys
   if(!length(by)) {
     new <- tibble::data_frame(DateTime = seq_datetime(x[[datetime]]))
     colnames(new) <- datetime
     x %<>% dplyr::left_join(new, ., by = datetime) %>%
       dplyr::arrange(UQ(parse_quosure(datetime)))
+    x <- x[colnames]
     return(x)
   }
   # only one combination of bys
   if(length(unique(plyr::id(x[by]))) == 1L) {
     x %<>% ps_add_missing_datetimes(datetime = datetime)
     x[,by] <- x[1L,by]
+    x <- x[colnames]
     return(x)
   }
 
   x %<>% plyr::ddply(by, ps_add_missing_datetimes, datetime = datetime, by = by)
+  x <- x[colnames]
   x
 }
