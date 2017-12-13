@@ -23,8 +23,10 @@ ps_add_missing_datetimes <- function(x, datetime = "DateTime", by = character(0)
   names(values) <- datetime
 
   check_data(x, values)
-  if(length(by)) check_colnames(x, by)
-
+  if(length(by)) {
+    check_colnames(x, by)
+    if(datetime %in% by) ps_error("datetime column '", datetime, "' must not also be in by" )
+  }
   x %<>% tibble::as_tibble()
 
   if(!nrow(x)) return(x)
