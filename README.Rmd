@@ -27,8 +27,11 @@ An R package to read, write and manipulate data frames.
 
 ```{r demonstration}
 library(poisdata)
-datetime <- as.POSIXct("2001-01-02 03:04:06") + c(1:10)
-data <- data.frame(DateTime = datetime, Value = c(1,NA,3,NA,NA,3,NA,NA,NA,7))
+datetime <- as.POSIXct("2001-01-02 03:04:06") + c(2,1,4,7)
+data <- data.frame(DateTime = datetime, Value = c(5,1,3,4))
+print(data)
+data <- ps_add_missing_sequence(data)
+print(data)
 ps_interpolate_sequence(data)
 ```
 
