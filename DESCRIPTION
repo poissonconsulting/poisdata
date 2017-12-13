@@ -1,7 +1,7 @@
 Package: poisdata
 Title: Read and Write Data
-Version: 0.0.0.9009
-Date: 2017-12-12
+Version: 0.0.0.9010
+Date: 2017-12-13
 Authors@R: c(
     person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre")),
     person("Seb", "Dalgarno", role = "aut"))
