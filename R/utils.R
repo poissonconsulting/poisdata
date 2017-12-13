@@ -12,3 +12,13 @@ seq_datetime <- function(x) {
   by <- min(diff(x))
   seq(from = from, to = to, by = by)
 }
+
+sequence <- function(x) {
+  x <- sort(x)
+  if(length(x) < 2L) return(x)
+  from <- dplyr::first(x)
+  to <- dplyr::last(x)
+  by <- min(diff(x))
+  seq(from = from, to = to, by = by)
+}
+
