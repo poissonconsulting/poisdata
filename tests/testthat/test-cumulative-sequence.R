@@ -5,7 +5,10 @@ test_that("cumulative-sequence", {
 
   expect_identical(ps_cumulative_sequence(2, cumsum = 4, data), 6L)
   expect_identical(ps_cumulative_sequence(2, cumsum = 1, data), 3L)
-  expect_equal(ps_cumulative_sequence(11, cumsum = 1L, data), NA_integer_)
-  expect_equal(ps_cumulative_sequence(1, cumsum = 12L, data), NA_integer_)
-  expect_equal(ps_cumulative_sequence(0, cumsum = 1L, data), NA_integer_)
+  expect_identical(ps_cumulative_sequence(11L, cumsum = 1L, data), NA_integer_)
+  expect_identical(ps_cumulative_sequence(1L, cumsum = 12L, data), NA_integer_)
+  expect_identical(ps_cumulative_sequence(0L, cumsum = 1L, data), NA_integer_)
+
+  is.na(data$Value[3]) <- TRUE
+  expect_identical(ps_cumulative_sequence(2L, cumsum = 4, data), NA_integer_)
 })

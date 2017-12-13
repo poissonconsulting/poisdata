@@ -35,14 +35,11 @@ ps_cumulative_sequence <- function(x, cumsum, data, sequence = "DateTime", value
   if(!identical(length(unique(diff(data[[sequence]]))), 1L))
     ps_error("sequence must be unique and complete (try ps_add_missing_sequence)")
 
-  if(any(is.na(data[[value]])))
-    ps_error("value must not have missing values (try ps_interpolate_sequence)")
-
   if(!x %in% data[[sequence]]) return(na)
 
   data <- data[data[[sequence]] > x,]
   data$cumsum <- cumsum(data[[value]])
-  data <- data[data$cumsum >= cumsum,]
+  data <- data[!is.na(data$cumsum) & data$cumsum >= cumsum,]
 
   if(!nrow(data)) return(na)
 
