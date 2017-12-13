@@ -90,7 +90,7 @@ with the smallest interval
 in the data are added.</p>
     
 
-    <pre class="usage"><span class='fu'>ps_add_missing_datetimes</span>(<span class='no'>x</span>, <span class='kw'>datetime</span> <span class='kw'>=</span> <span class='st'>"DateTime"</span>)</pre>
+    <pre class="usage"><span class='fu'>ps_add_missing_datetimes</span>(<span class='no'>x</span>, <span class='kw'>datetime</span> <span class='kw'>=</span> <span class='st'>"DateTime"</span>, <span class='kw'>by</span> <span class='kw'>=</span> <span class='fu'>character</span>(<span class='fl'>0</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -102,6 +102,10 @@ in the data are added.</p>
     <tr>
       <th>datetime</th>
       <td><p>A string naming the POSIXt column.</p></td>
+    </tr>
+    <tr>
+      <th>by</th>
+      <td><p>A character vector of columns to add the missing datetimes by.</p></td>
     </tr>
     </table>
     

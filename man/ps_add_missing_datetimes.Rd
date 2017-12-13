@@ -4,12 +4,14 @@
 \alias{ps_add_missing_datetimes}
 \title{Add Missing Date Times.}
 \usage{
-ps_add_missing_datetimes(x, datetime = "DateTime")
+ps_add_missing_datetimes(x, datetime = "DateTime", by = character(0))
 }
 \arguments{
 \item{x}{The data.frame.}
 
 \item{datetime}{A string naming the POSIXt column.}
+
+\item{by}{A character vector of columns to add the missing datetimes by.}
 }
 \value{
 A tbl data frame sorted by DateTime.
