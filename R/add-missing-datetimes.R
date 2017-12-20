@@ -14,5 +14,5 @@
 ps_add_missing_datetimes <- function(x, datetime = "DateTime", by = character(0)) {
 
   .Deprecated("ps_add_missing_sequence")
-  return(ps_add_missing_sequence(x, sequence = datetime, by = by))
+  ps_add_missing_sequence(x, sequence = datetime, by = by)
 }

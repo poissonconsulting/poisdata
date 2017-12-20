@@ -11,8 +11,8 @@
 #' @return A scalar of the end.
 #' @export
 ps_cumulative_sequence <- function(x, cumsum, data, sequence = "DateTime", value = "Value") {
-  check_scalar(x)
-  check_scalar(cumsum)
+  check_length1(x)
+  check_length1(cumsum)
   check_string(sequence)
   check_string(value)
 
