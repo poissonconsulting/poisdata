@@ -9,10 +9,10 @@
 #' @return The modified object.
 #' @export
 ps_replace_values <- function(x, columns = names(x), from, to = NA_character_) {
+  sfc_name <- attr(x, "sf_column")
+  columns <- c(columns, sfc_name)
   x <- purrr::modify_at(x, columns, function(y){
-    if(any(y %in% from)){replace(y, y %in% from, to)} else {
-      y <- y
-    }
+    if(any(y %in% from)){replace(y, y %in% from, to)} else {y <- y}
   })
   x
 }
