@@ -4,7 +4,7 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-[![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg)](https://github.com/joethorley/stability-badges#experimental)
+[![stability-unstable](https://img.shields.io/badge/stability-unstable-yellow.svg)](https://github.com/joethorley/stability-badges#unstable)
 [![Travis-CI Build Status](https://travis-ci.org/poissonconsulting/poisdata.svg?branch=master)](https://travis-ci.org/poissonconsulting/poisdata)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/poisdata?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/poisdata)
 [![Coverage Status](https://img.shields.io/codecov/c/github/poissonconsulting/poisdata/master.svg)](https://codecov.io/github/poissonconsulting/poisdata?branch=master)
@@ -21,23 +21,34 @@ knitr::opts_chunk$set(
 
 # poisdata
 
-An R package to read and write data for Poisson Consulting scripts and packages.
+An R package to read, write and manipulate data frames.
 
 ## Demonstration
 
 ```{r demonstration}
 library(poisdata)
-
-read_hobo_csv(system.file("hobo", "10723440.csv", package = "poisdata"))
+datetime <- as.POSIXct("2001-01-02 03:04:06") + c(2,1,4,7)
+data <- data.frame(DateTime = datetime, Value = c(5,1,3,4))
+print(data)
+data <- ps_add_missing_sequence(data)
+print(data)
+ps_interpolate_sequence(data)
 ```
 
 ## Installation
 
-```{r gh-installation, eval = FALSE}
+`poisdata` is available from GitHub
+```
 # install.packages("devtools")
 devtools::install_github("poissonconsulting/poisdata")
 ```
 
+or the Poisson R Archive Network ([PoisRAN](https://github.com/poissonconsulting/drat))
+```
+# install.packages("drat")
+drat::addRepo("poissonconsulting")
+install.packages("poisdata")
+```
 ## Contribution
 
 Please report any [issues](https://github.com/poissonconsulting/poisdata/issues).

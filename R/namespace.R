@@ -1,10 +1,8 @@
-#' @import datacheckr dplyr
+#' @import checkr dplyr poisutils
 #' @importFrom magrittr %<>% %>%
 #' @importFrom stringr str_c str_replace str_detect str_extract
-#' @importFrom poisutils ps_message ps_warning ps_error
 #' @importFrom readr read_csv
+#' @importFrom rlang .data parse_quosure UQ
 #' @importFrom udunits2 ud.convert
 #' @importFrom yesno yesno
-#' @importFrom methods as
-
 NULL

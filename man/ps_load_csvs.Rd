@@ -4,29 +4,25 @@
 \alias{ps_load_csvs}
 \title{Load CSVs}
 \usage{
-ps_load_csvs(dir = ".", pattern = "[.]csv$", recursive = FALSE,
+ps_load_csvs(dir = ".", recursive = FALSE, add_name = NULL,
   rename = identity, envir = parent.frame(), ...)
 }
 \arguments{
 \item{dir}{A string of the directory.}
 
-\item{pattern}{A string of the regular expression to use to identify files.}
-
 \item{recursive}{A flag indicating whether to include files in subdirectories.}
 
-\item{rename}{A function that is used to rename files (after removing extension .csv) before they are passed to \code{make.names}.}
+\item{add_name}{A string specifying the name of the column to add to each data frame with the file names (including subdirectories).}
+
+\item{rename}{A function that is used to rename files (after removing the extension) before they are passed to \code{make.names}.}
 
 \item{envir}{The environment to assign the data frames.}
 
-\item{...}{Additional arguments passed to \code{read_csv}.}
+\item{...}{Additional arguments passed to \code{read}.}
 }
 \value{
 An invisible character vector of the file names.
 }
 \description{
-By default reads all files in the directory dir with the extension .csv
-using \code{readr::read_csv()} and loads them into the
-calling environment after renaming using \code{make.names(unique = TRUE)}.
-It is useful for quickly loading a set of csv files into the workspace
-(just call the function at the top level of a script).
+Load CSVs
 }

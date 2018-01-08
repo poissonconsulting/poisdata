@@ -63,47 +63,58 @@
 <div class="contents">
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<div id="poisdata" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#poisdata" class="anchor"></a>poisdata</h1></div>
-<p>An R package to read and write data for Poisson Consulting scripts and packages.</p>
-<div id="demonstration" class="section level2">
-<h2 class="hasAnchor">
-<a href="#demonstration" class="anchor"></a>Demonstration</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(poisdata)
-
-<span class="kw"><a href="reference/read_hobo_csv.html">read_hobo_csv</a></span>(<span class="kw">system.file</span>(<span class="st">"hobo"</span>, <span class="st">"10723440.csv"</span>, <span class="dt">package =</span> <span class="st">"poisdata"</span>))
-<span class="co">#&gt; imported 11 rows of data from '/Library/Frameworks/R.framework/Versions/3.4/Resources/library/poisdata/hobo/10723440.csv'</span>
-<span class="co">#&gt; # A tibble: 11 x 6</span>
-<span class="co">#&gt;      Logger            DateTime Temperature_degC FileRow FileName</span>
-<span class="co">#&gt;       &lt;chr&gt;              &lt;dttm&gt;            &lt;dbl&gt;   &lt;int&gt;    &lt;chr&gt;</span>
-<span class="co">#&gt;  1 10723440 2015-11-10 07:18:12           14.649       1 10723440</span>
-<span class="co">#&gt;  2 10723440 2015-11-10 07:23:12           17.106       3 10723440</span>
-<span class="co">#&gt;  3 10723440 2015-11-10 07:28:12           16.177       4 10723440</span>
-<span class="co">#&gt;  4 10723440 2015-11-10 07:33:12           13.112       5 10723440</span>
-<span class="co">#&gt;  5 10723440 2015-11-10 07:38:12           10.883       6 10723440</span>
-<span class="co">#&gt;  6 10723440 2015-11-10 07:43:12            9.435       7 10723440</span>
-<span class="co">#&gt;  7 10723440 2015-11-10 07:48:12            8.419       8 10723440</span>
-<span class="co">#&gt;  8 10723440 2015-11-10 07:53:12            7.795       9 10723440</span>
-<span class="co">#&gt;  9 10723440 2015-11-10 07:58:12            7.393      10 10723440</span>
-<span class="co">#&gt; 10 10723440 2016-04-09 04:38:12            3.932      11 10723440</span>
-<span class="co">#&gt; 11 10723440 2016-04-09 04:43:12            3.932      12 10723440</span>
-<span class="co">#&gt; # ... with 1 more variables: Directory &lt;chr&gt;</span></code></pre></div>
-</div>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("devtools")</span>
-devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"poissonconsulting/poisdata"</span>)</code></pre></div>
-</div>
-<div id="contribution" class="section level2">
-<h2 class="hasAnchor">
-<a href="#contribution" class="anchor"></a>Contribution</h2>
+<section id="poisdata" class="level1"><div class="page-header"><h1>poisdata</h1></div>
+<p>An R package to read, write and manipulate data frames.</p>
+<section id="demonstration" class="level2"><h2>Demonstration</h2>
+<pre class="sourceCode r" id="cb1"><code class="sourceCode r"><div class="sourceLine" id="cb1-1" data-line-number="1">
+<span class="kw">library</span>(poisdata)</div>
+<div class="sourceLine" id="cb1-2" data-line-number="2">datetime &lt;-<span class="st"> </span><span class="kw">as.POSIXct</span>(<span class="st">"2001-01-02 03:04:06"</span>) <span class="op">+</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">7</span>)</div>
+<div class="sourceLine" id="cb1-3" data-line-number="3">data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">DateTime =</span> datetime, <span class="dt">Value =</span> <span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>))</div>
+<div class="sourceLine" id="cb1-4" data-line-number="4">
+<span class="kw">print</span>(data)</div>
+<div class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt;              DateTime Value</span></div>
+<div class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt; 1 2001-01-02 03:04:08     5</span></div>
+<div class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt; 2 2001-01-02 03:04:07     1</span></div>
+<div class="sourceLine" id="cb1-8" data-line-number="8"><span class="co">#&gt; 3 2001-01-02 03:04:10     3</span></div>
+<div class="sourceLine" id="cb1-9" data-line-number="9"><span class="co">#&gt; 4 2001-01-02 03:04:13     4</span></div>
+<div class="sourceLine" id="cb1-10" data-line-number="10">data &lt;-<span class="st"> </span><span class="kw"><a href="reference/ps_add_missing_sequence.html">ps_add_missing_sequence</a></span>(data)</div>
+<div class="sourceLine" id="cb1-11" data-line-number="11">
+<span class="kw">print</span>(data)</div>
+<div class="sourceLine" id="cb1-12" data-line-number="12"><span class="co">#&gt; # A tibble: 7 x 2</span></div>
+<div class="sourceLine" id="cb1-13" data-line-number="13"><span class="co">#&gt;              DateTime Value</span></div>
+<div class="sourceLine" id="cb1-14" data-line-number="14"><span class="co">#&gt;                &lt;dttm&gt; &lt;dbl&gt;</span></div>
+<div class="sourceLine" id="cb1-15" data-line-number="15"><span class="co">#&gt; 1 2001-01-02 03:04:07     1</span></div>
+<div class="sourceLine" id="cb1-16" data-line-number="16"><span class="co">#&gt; 2 2001-01-02 03:04:08     5</span></div>
+<div class="sourceLine" id="cb1-17" data-line-number="17"><span class="co">#&gt; 3 2001-01-02 03:04:09    NA</span></div>
+<div class="sourceLine" id="cb1-18" data-line-number="18"><span class="co">#&gt; 4 2001-01-02 03:04:10     3</span></div>
+<div class="sourceLine" id="cb1-19" data-line-number="19"><span class="co">#&gt; 5 2001-01-02 03:04:11    NA</span></div>
+<div class="sourceLine" id="cb1-20" data-line-number="20"><span class="co">#&gt; 6 2001-01-02 03:04:12    NA</span></div>
+<div class="sourceLine" id="cb1-21" data-line-number="21"><span class="co">#&gt; 7 2001-01-02 03:04:13     4</span></div>
+<div class="sourceLine" id="cb1-22" data-line-number="22">
+<span class="kw"><a href="reference/ps_interpolate_sequence.html">ps_interpolate_sequence</a></span>(data)</div>
+<div class="sourceLine" id="cb1-23" data-line-number="23"><span class="co">#&gt; # A tibble: 7 x 2</span></div>
+<div class="sourceLine" id="cb1-24" data-line-number="24"><span class="co">#&gt;              DateTime    Value</span></div>
+<div class="sourceLine" id="cb1-25" data-line-number="25"><span class="co">#&gt;                &lt;dttm&gt;    &lt;dbl&gt;</span></div>
+<div class="sourceLine" id="cb1-26" data-line-number="26"><span class="co">#&gt; 1 2001-01-02 03:04:07 1.000000</span></div>
+<div class="sourceLine" id="cb1-27" data-line-number="27"><span class="co">#&gt; 2 2001-01-02 03:04:08 5.000000</span></div>
+<div class="sourceLine" id="cb1-28" data-line-number="28"><span class="co">#&gt; 3 2001-01-02 03:04:09 4.000000</span></div>
+<div class="sourceLine" id="cb1-29" data-line-number="29"><span class="co">#&gt; 4 2001-01-02 03:04:10 3.000000</span></div>
+<div class="sourceLine" id="cb1-30" data-line-number="30"><span class="co">#&gt; 5 2001-01-02 03:04:11 3.333333</span></div>
+<div class="sourceLine" id="cb1-31" data-line-number="31"><span class="co">#&gt; 6 2001-01-02 03:04:12 3.666667</span></div>
+<div class="sourceLine" id="cb1-32" data-line-number="32"><span class="co">#&gt; 7 2001-01-02 03:04:13 4.000000</span></div></code></pre>
+</section><section id="installation" class="level2"><h2>Installation</h2>
+<p><code>poisdata</code> is available from GitHub</p>
+<pre><code><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github"># install.packages("devtools")
+devtools::install_github("poissonconsulting/poisdata")</a></code></pre>
+<p>or the Poisson R Archive Network (<a href="https://github.com/poissonconsulting/drat">PoisRAN</a>)</p>
+<pre><code><a href="http://www.rdocumentation.org/packages/drat/topics/addRepo"># install.packages("drat")
+drat::addRepo("poissonconsulting")
+install.packages("poisdata")</a></code></pre>
+</section><section id="contribution" class="level2"><h2>Contribution</h2>
 <p>Please report any <a href="https://github.com/poissonconsulting/poisdata/issues">issues</a>.</p>
 <p><a href="https://github.com/poissonconsulting/poisdata/pulls">Pull requests</a> are always welcome.</p>
 <p>Please note that this project is released with a <a href="https://github.com/poissonconsulting/poisdata/blob/master/CONDUCT.md">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
-</div>
-</div>
+</section></section>
 </div>
   </div>
 
@@ -125,7 +136,7 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 </ul>
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/joethorley/stability-badges#experimental"><img src="https://img.shields.io/badge/stability-experimental-orange.svg" alt="stability-experimental"></a></li>
+<li><a href="https://github.com/joethorley/stability-badges#unstable"><img src="https://img.shields.io/badge/stability-unstable-yellow.svg" alt="stability-unstable"></a></li>
 <li><a href="https://travis-ci.org/poissonconsulting/poisdata"><img src="https://travis-ci.org/poissonconsulting/poisdata.svg?branch=master" alt="Travis-CI Build Status"></a></li>
 <li><a href="https://ci.appveyor.com/project/poissonconsulting/poisdata"><img src="https://ci.appveyor.com/api/projects/status/github/poissonconsulting/poisdata?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a></li>
 <li><a href="https://codecov.io/github/poissonconsulting/poisdata?branch=master"><img src="https://img.shields.io/codecov/c/github/poissonconsulting/poisdata/master.svg" alt="Coverage Status"></a></li>
