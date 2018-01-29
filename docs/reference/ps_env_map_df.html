@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Add Missing Sequence. — ps_add_missing_sequence • poisdata</title>
+<title>Environment map — ps_env_map_df • poisdata</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -80,50 +80,33 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Add Missing Sequence.</h1>
+    <h1>Environment map</h1>
     </div>
 
     
-    <p>Adds missing sequence to a data frame.
-All missing values between the minimum and maximum values
-with the smallest interval
-in the data are added.</p>
+    <p>Map a function to all data.frames in envir.</p>
     
 
-    <pre class="usage"><span class='fu'>ps_add_missing_sequence</span>(<span class='no'>x</span>, <span class='kw'>sequence</span> <span class='kw'>=</span> <span class='st'>"DateTime"</span>, <span class='kw'>by</span> <span class='kw'>=</span> <span class='fu'>character</span>(<span class='fl'>0</span>))</pre>
+    <pre class="usage"><span class='fu'>ps_env_map_df</span>(<span class='no'>fun</span>, <span class='kw'>envir</span> <span class='kw'>=</span> <span class='fu'>parent.frame</span>())</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>The data.frame.</p></td>
+      <th>fun</th>
+      <td><p>A function.</p></td>
     </tr>
     <tr>
-      <th>sequence</th>
-      <td><p>A string naming the sequence column.</p></td>
-    </tr>
-    <tr>
-      <th>by</th>
-      <td><p>A character vector of columns to add the missing sequence by.</p></td>
+      <th>envir</th>
+      <td><p>The environment.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tbl data frame sorted by DateTime.</p>
+    <p>An invisible vector of the modified data frames.</p>
     
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>datetime</span> <span class='kw'>&lt;-</span> <span class='fu'>as.POSIXct</span>(<span class='st'>"2001-01-02 03:04:06"</span>) + <span class='fu'>c</span>(<span class='fl'>1</span>,<span class='fl'>3</span>,<span class='fl'>9</span>)
-<span class='fu'>ps_add_missing_sequence</span>(<span class='fu'>data.frame</span>(<span class='kw'>DateTime</span> <span class='kw'>=</span> <span class='no'>datetime</span>, <span class='kw'>Value</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>1</span>,<span class='fl'>3</span>,<span class='fl'>9</span>)))</div><div class='output co'>#&gt; # A tibble: 5 x 2
-#&gt;   DateTime            Value
-#&gt;   &lt;dttm&gt;              &lt;dbl&gt;
-#&gt; 1 2001-01-02 03:04:07  1.00
-#&gt; 2 2001-01-02 03:04:09  3.00
-#&gt; 3 2001-01-02 03:04:11 NA   
-#&gt; 4 2001-01-02 03:04:13 NA   
-#&gt; 5 2001-01-02 03:04:15  9.00</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -131,9 +114,7 @@ in the data are added.</p>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+          </ul>
 
   </div>
 </div>
