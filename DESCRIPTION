@@ -27,7 +27,9 @@ Imports:  checkr,
           yesno
 Suggests: testthat,
           covr
-Additional_Repositories: http://poissonconsulting.github.io/drat
+Remotes:
+        poissonconsulting/poisutils,
+        poissonconsulting/yesno
 SystemRequirements: udunits
 Encoding: UTF-8
 LazyData: true
