@@ -4,9 +4,16 @@
 \alias{ps_load_files}
 \title{Load Files}
 \usage{
-ps_load_files(dir = ".", pattern = "[.]csv$", recursive = FALSE,
-  read = readr::read_csv, add_name = NULL, rename = identity,
-  envir = parent.frame(), ...)
+ps_load_files(
+  dir = ".",
+  pattern = "[.]csv$",
+  recursive = FALSE,
+  read = readr::read_csv,
+  add_name = NULL,
+  rename = identity,
+  envir = parent.frame(),
+  ...
+)
 }
 \arguments{
 \item{dir}{A string of the directory.}

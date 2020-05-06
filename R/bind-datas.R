@@ -9,7 +9,7 @@
 ps_bind_datas <- function(envir = parent.frame(), rm = TRUE) {
   check_flag(rm)
   names <- ps_names_datas(envir)
-  if(!length(names)) return(tibble::data_frame())
+  if(!length(names)) return(tibble::tibble())
 
   ..data <- purrr::map(names, get, envir = envir)
 

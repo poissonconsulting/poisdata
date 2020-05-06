@@ -4,8 +4,15 @@
 \alias{ps_interpolate_sequence}
 \title{Interpolate Sequence}
 \usage{
-ps_interpolate_sequence(x, sequence = "DateTime", value = "Value",
-  by = character(0), max_gap = 10L, method = "linear", step = 0.5)
+ps_interpolate_sequence(
+  x,
+  sequence = "DateTime",
+  value = "Value",
+  by = character(0),
+  max_gap = 10L,
+  method = "linear",
+  step = 0.5
+)
 }
 \arguments{
 \item{x}{The data.frame.}

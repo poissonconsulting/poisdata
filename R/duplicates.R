@@ -17,6 +17,6 @@ ps_duplicates <- function(x, cols = colnames(x)) {
   y <- y[duplicated(y),] %>%
     unique()
   x %<>% merge(y, by = cols)
-  x %<>% dplyr::as_data_frame()
+  x %<>% dplyr::as_tibble()
   x
 }

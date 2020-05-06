@@ -4,8 +4,14 @@
 \alias{ps_bind_files}
 \title{Bind Data}
 \usage{
-ps_bind_files(dir = ".", pattern = "[.]csv$", recursive = FALSE,
-  add_name = NULL, read = readr::read_csv, ...)
+ps_bind_files(
+  dir = ".",
+  pattern = "[.]csv$",
+  recursive = FALSE,
+  add_name = NULL,
+  read = readr::read_csv,
+  ...
+)
 }
 \arguments{
 \item{dir}{A string of the directory.}

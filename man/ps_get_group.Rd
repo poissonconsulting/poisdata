@@ -4,8 +4,10 @@
 \alias{ps_get_group}
 \title{Get Group}
 \usage{
-ps_get_group(x, breaks = c(Recruit = 0, Juvenile = 20, Subadult = 50, Adult =
-  70))
+ps_get_group(
+  x,
+  breaks = c(Recruit = 0, Juvenile = 20, Subadult = 50, Adult = 70)
+)
 }
 \arguments{
 \item{x}{A numeric or integer vector}

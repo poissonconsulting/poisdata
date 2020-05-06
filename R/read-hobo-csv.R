@@ -1,7 +1,7 @@
 no_hobo_data <- function(tz) {
   datetime <- Sys.time()
   lubridate::tz(datetime) <- tz
-  data <- dplyr::data_frame(Logger = "", DateTime = datetime,
+  data <- dplyr::tibble(Logger = "", DateTime = datetime,
                             Temperature = 1, FileRow = 1L,
                             FileName = "", Directory = "")
   data %<>% slice_(~0)
@@ -47,7 +47,7 @@ extract_hobo_meta_data_tz_offset <- function(colname) {
 }
 
 extract_hobo_meta_data <- function(colnames) {
-  data_frame(Logger = extract_hobo_meta_data_logger(colnames[3]),
+  tibble(Logger = extract_hobo_meta_data_logger(colnames[3]),
              TempUnits = extract_hobo_meta_data_units(colnames[3]),
              TimeZoneOffset = extract_hobo_meta_data_tz_offset(colnames[2]))
 }

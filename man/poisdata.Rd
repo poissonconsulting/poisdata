@@ -5,7 +5,6 @@
 \alias{poisdata}
 \alias{package-poisdata}
 \alias{poisdata-package}
-\alias{poisdata-package}
 \title{poisdata}
 \description{
 Read and write data for Poisson Consulting scripts and packages.

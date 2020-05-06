@@ -34,7 +34,7 @@ ps_add_missing_sequence <- function(x, sequence = "DateTime", by = character(0))
 
   # no bys
   if(!length(by)) {
-    new <- tibble::data_frame(Sequence = sequence(x[[sequence]]))
+    new <- tibble::tibble(Sequence = sequence(x[[sequence]]))
     colnames(new) <- sequence
     x %<>% dplyr::left_join(new, ., by = sequence) %>%
       dplyr::arrange(UQ(parse_quosure(sequence)))

@@ -4,8 +4,14 @@
 \alias{ps_load_csvs}
 \title{Load CSVs}
 \usage{
-ps_load_csvs(dir = ".", recursive = FALSE, add_name = NULL,
-  rename = identity, envir = parent.frame(), ...)
+ps_load_csvs(
+  dir = ".",
+  recursive = FALSE,
+  add_name = NULL,
+  rename = identity,
+  envir = parent.frame(),
+  ...
+)
 }
 \arguments{
 \item{dir}{A string of the directory.}

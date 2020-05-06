@@ -4,8 +4,7 @@
 \alias{ps_cumulative_sequence}
 \title{Cumulative Sequence}
 \usage{
-ps_cumulative_sequence(x, cumsum, data, sequence = "DateTime",
-  value = "Value")
+ps_cumulative_sequence(x, cumsum, data, sequence = "DateTime", value = "Value")
 }
 \arguments{
 \item{x}{A scalar specifying the start.}

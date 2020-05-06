@@ -4,8 +4,14 @@
 \alias{read_hobo_csv}
 \title{Read Hobo CSVs}
 \usage{
-read_hobo_csv(file = ".", orders = c("Ymd HMS", "dmy HMS"),
-  units = "degC", tz = "Etc/GMT+8", recursive = FALSE, quiet = FALSE)
+read_hobo_csv(
+  file = ".",
+  orders = c("Ymd HMS", "dmy HMS"),
+  units = "degC",
+  tz = "Etc/GMT+8",
+  recursive = FALSE,
+  quiet = FALSE
+)
 }
 \arguments{
 \item{file}{A string of the file or directory.}
