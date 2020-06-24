@@ -14,7 +14,7 @@ ps_duplicates <- function(x, cols = colnames(x)) {
   if (!length(cols)) return(x)
 
   y <- x[cols]
-  y <- y[duplicated(y),] %>%
+  y <- y[duplicated(y),,drop = FALSE] %>%
     unique()
   x %<>% merge(y, by = cols)
   x %<>% dplyr::as_tibble()
