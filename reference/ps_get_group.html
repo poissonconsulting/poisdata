@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">poisdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1.9000</span>
       </span>
     </div>
 
@@ -120,7 +120,7 @@
     <p>Get Group</p>
     </div>
 
-    <pre class="usage"><span class='fu'><a href='https://rdrr.io/pkg/poisdata/man/ps_get_group.html'>ps_get_group</a></span>(
+    <pre class="usage"><span class='fu'>ps_get_group</span>(
   <span class='kw'>x</span>,
   breaks = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(Recruit = <span class='fl'>0</span>, Juvenile = <span class='fl'>20</span>, Subadult = <span class='fl'>50</span>, Adult = <span class='fl'>70</span>)
 )</pre>
@@ -143,7 +143,7 @@
     <p>An ordered factor of the group.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/pkg/poisdata/man/ps_get_group.html'>ps_get_group</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='op'>-</span><span class='fl'>Inf</span>,<span class='op'>-</span><span class='fl'>1</span>,<span class='fl'>0</span>,<span class='fl'>19</span>,<span class='fl'>20</span>,<span class='fl'>69</span>,<span class='fl'>70</span>,<span class='fl'>Inf</span>))</div><div class='output co'>#&gt; [1] &lt;NA&gt;     &lt;NA&gt;     Recruit  Recruit  Juvenile Subadult Adult    Adult   
+    <pre class="examples"><div class='input'><span class='fu'>ps_get_group</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='op'>-</span><span class='fl'>Inf</span>,<span class='op'>-</span><span class='fl'>1</span>,<span class='fl'>0</span>,<span class='fl'>19</span>,<span class='fl'>20</span>,<span class='fl'>69</span>,<span class='fl'>70</span>,<span class='fl'>Inf</span>))</div><div class='output co'>#&gt; [1] &lt;NA&gt;     &lt;NA&gt;     Recruit  Recruit  Juvenile Subadult Adult    Adult   
 #&gt; Levels: Recruit &lt; Juvenile &lt; Subadult &lt; Adult</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
