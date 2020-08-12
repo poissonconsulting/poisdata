@@ -5,10 +5,13 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![Coverage
-Status](https://img.shields.io/codecov/c/github/poissonconsulting/poisdata/master.svg)](https://codecov.io/github/poissonconsulting/poisdata?branch=master)
+[![Codecov test
+coverage](https://codecov.io/gh/poissonconsulting/poisdata/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/poisdata?branch=master)
+[![R build
+status](https://github.com/poissonconsulting/poisdata/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/poisdata/actions)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 <!-- badges: end -->
 
 # poisdata
@@ -28,10 +31,6 @@ print(data)
 #> 3 2001-01-02 03:04:10     3
 #> 4 2001-01-02 03:04:13     4
 data <- ps_add_missing_sequence(data)
-#> Warning: `data_frame()` is deprecated as of tibble 1.1.0.
-#> Please use `tibble()` instead.
-#> This warning is displayed once every 8 hours.
-#> Call `lifecycle::last_warnings()` to see where this warning was generated.
 #> Warning: `parse_quosure()` is deprecated as of rlang 0.2.0.
 #> Please use `parse_quo()` instead.
 #> This warning is displayed once per session.
@@ -74,6 +73,9 @@ Please report any
 [Pull requests](https://github.com/poissonconsulting/poisdata/pulls) are
 always welcome.
 
-Please note that this project is released with a [Contributor Code of
-Conduct](https://github.com/poissonconsulting/poisdata/blob/master/CONDUCT.md).
-By participating in this project you agree to abide by its terms.
+## Code of Conduct
+
+Please note that the poisdata project is released with a [Contributor
+Code of
+Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.

@@ -6,8 +6,10 @@ output: github_document
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![Coverage Status](https://img.shields.io/codecov/c/github/poissonconsulting/poisdata/master.svg)](https://codecov.io/github/poissonconsulting/poisdata?branch=master)
+[![Codecov test coverage](https://codecov.io/gh/poissonconsulting/poisdata/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/poisdata?branch=master)
+[![R build status](https://github.com/poissonconsulting/poisdata/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/poisdata/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 <!-- badges: end -->
 
 ```{r, echo = FALSE}
@@ -48,5 +50,7 @@ Please report any [issues](https://github.com/poissonconsulting/poisdata/issues)
 
 [Pull requests](https://github.com/poissonconsulting/poisdata/pulls) are always welcome.
 
-Please note that this project is released with a [Contributor Code of Conduct](https://github.com/poissonconsulting/poisdata/blob/master/CONDUCT.md). 
-By participating in this project you agree to abide by its terms.
+## Code of Conduct
+
+Please note that the poisdata project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+
