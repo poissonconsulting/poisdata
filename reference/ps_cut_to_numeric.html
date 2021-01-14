@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get Group — ps_get_group • poisdata</title>
+<title>Cut to Numeric — ps_cut_to_numeric • poisdata</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Get Group — ps_get_group" />
-<meta property="og:description" content="Get Group" />
+<meta property="og:title" content="Cut to Numeric — ps_cut_to_numeric" />
+<meta property="og:description" content="Cut to Numeric" />
 
 
 
@@ -107,41 +107,33 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get Group</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/poisdata/blob/master/R/group.R'><code>R/group.R</code></a></small>
-    <div class="hidden name"><code>ps_get_group.Rd</code></div>
+    <h1>Cut to Numeric</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/poisdata/blob/master/R/cut-to-numeric.R'><code>R/cut-to-numeric.R</code></a></small>
+    <div class="hidden name"><code>ps_cut_to_numeric.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get Group</p>
+    <p>Cut to Numeric</p>
     </div>
 
-    <pre class="usage"><span class='fu'>ps_get_group</span><span class='op'>(</span>
-  <span class='va'>x</span>,
-  breaks <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>Recruit <span class='op'>=</span> <span class='fl'>0</span>, Juvenile <span class='op'>=</span> <span class='fl'>20</span>, Subadult <span class='op'>=</span> <span class='fl'>50</span>, Adult <span class='op'>=</span> <span class='fl'>70</span><span class='op'>)</span>
-<span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>ps_cut_to_numeric</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>A numeric or integer vector</p></td>
-    </tr>
-    <tr>
-      <th>breaks</th>
-      <td><p>A uniquely named numeric vector of the first value of each group.</p></td>
+      <td><p>A character or factor vector of cuts</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>An ordered factor of the group.</p>
+    <p>An numeric vector of the cuts.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>ps_get_group</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='cn'>Inf</span>,<span class='op'>-</span><span class='fl'>1</span>,<span class='fl'>0</span>,<span class='fl'>19</span>,<span class='fl'>20</span>,<span class='fl'>69</span>,<span class='fl'>70</span>,<span class='cn'>Inf</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] &lt;NA&gt;     &lt;NA&gt;     Recruit  Recruit  Juvenile Subadult Adult    Adult   
-#&gt; Levels: Recruit &lt; Juvenile &lt; Subadult &lt; Adult</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>ps_cut_to_numeric</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>NA</span>, <span class='st'>"(0.25,0.75]"</span>, <span class='st'>"[-2,-1)"</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1]   NA  0.5 -1.5</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
