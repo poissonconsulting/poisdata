@@ -1,17 +1,15 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
 <!-- badges: start -->
 
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![Codecov test
 coverage](https://codecov.io/gh/poissonconsulting/poisdata/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/poisdata?branch=master)
 [![R build
 status](https://github.com/poissonconsulting/poisdata/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/poisdata/actions)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
 <!-- badges: end -->
 
 # poisdata
