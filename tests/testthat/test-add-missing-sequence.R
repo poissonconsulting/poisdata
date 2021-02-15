@@ -1,5 +1,3 @@
-context("add-missing-timeseries")
-
 test_that("add_missing_timeseries", {
   datetime <- as.POSIXct("2001-01-02 03:04:06") + c(1,3,9)
 

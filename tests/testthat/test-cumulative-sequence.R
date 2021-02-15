@@ -1,5 +1,3 @@
-context("cumulative-sequence")
-
 test_that("cumulative-sequence", {
   data <- data.frame(DateTime = 1:10, Value = rep(1, 10))
 

@@ -1,5 +1,3 @@
-context("duplicates")
-
 test_that("can read multiple hobo csv file", {
 
   tib <- dplyr::tibble(x = c(1,2,1), y = c(1,1,1))

@@ -1,5 +1,3 @@
-context("env-map")
-
 test_that("works", {
   df <- readRDS(file = system.file("df/df.rds", package = "poisdata"))
   df_chr <- df

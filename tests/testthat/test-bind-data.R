@@ -1,5 +1,3 @@
-context("bind-datas")
-
 test_that("bind_datas", {
   expect_identical(ps_bind_datas(), tibble::tibble())
   mtcars <- datasets::mtcars

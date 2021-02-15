@@ -1,5 +1,3 @@
-context("replace-values")
-
 test_that("replaces values for columns with identical class to from vector", {
   x <- readRDS(system.file("df/df.rds", package = "poisdata"))
   x$cylf <- as.character(x$cyl)

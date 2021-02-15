@@ -1,5 +1,3 @@
-context("write-data-csvs")
-
 test_that("writes", {
   files <- ps_load_files(system.file("csv", package = "poisdata"), recursive = TRUE)
 

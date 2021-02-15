@@ -1,5 +1,3 @@
-context("interpolate-sequence")
-
 test_that("interpolate-sequence", {
   datetime <- as.POSIXct("2001-01-02 03:04:06") + c(1:10)
 

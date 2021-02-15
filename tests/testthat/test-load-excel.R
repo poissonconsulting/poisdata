@@ -1,5 +1,3 @@
-context("load-excel")
-
 test_that("can read excel sheets", {
   sheets <- ps_load_excel(file = system.file("excel/test-excel.xlsx", package = "poisdata"))
   expect_identical(sort(sheets), sort(c("Sheet1", "Sheet2", "Sheet3")))

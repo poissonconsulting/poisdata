@@ -1,5 +1,3 @@
-context("group")
-
 test_that("bind_datas", {
   expect_identical(ps_get_group(c(-Inf,-1,0,19,20,69,70,Inf)),
                    ordered(c(NA, NA, "Recruit", "Recruit", "Juvenile",

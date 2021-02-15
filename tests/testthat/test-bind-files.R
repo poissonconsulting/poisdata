@@ -1,5 +1,3 @@
-context("bind-files")
-
 test_that("bind_files", {
   data <- ps_bind_files(system.file("csv", package = "poisdata"), recursive = TRUE)
   expect_identical(ls(), "data")
