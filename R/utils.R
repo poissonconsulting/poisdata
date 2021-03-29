@@ -1,3 +1,10 @@
+variable_column <- function(x, na_ignore = FALSE) {
+  x <- unique(x)
+  if(na_ignore)
+    x <- x[!is.na(x)]
+  length(x) > 1
+}
+
 is_df <- function(name, envir) {
   is.data.frame(get(name, envir = envir))
 }
