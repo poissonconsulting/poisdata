@@ -26,6 +26,7 @@ Imports: checkr,
           udunits2,
           yesno
 Suggests: testthat,
+          withr,
           covr
 Remotes:
         poissonconsulting/poisutils
