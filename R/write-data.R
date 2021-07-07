@@ -9,8 +9,8 @@
 #' @export
 ps_write_data_csvs <- function(dir = ".", envir = parent.frame()) {
 
-  check_string(dir)
-  check_environment(envir)
+  chk_string(dir)
+  chk_environment(envir)
 
   if (!dir.exists(dir)) ps_error("directory '", dir, "' does not exist")
 

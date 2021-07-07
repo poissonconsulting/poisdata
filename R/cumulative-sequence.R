@@ -11,14 +11,15 @@
 #' @return A scalar of the end.
 #' @export
 ps_cumulative_sequence <- function(x, cumsum, data, sequence = "DateTime", value = "Value") {
-  check_length1(x)
-  check_length1(cumsum)
-  check_string(sequence)
-  check_string(value)
+  check_dim(x, values = 1)
+  check_dim(cumsum, values = 1)
+  chk_string(sequence)
+  chk_string(value)
 
   check_data(data)
-  check_colnames(data, sequence)
-  check_colnames(data, value)
+  check_names(data, sequence)
+  check_names(data, value)
+
 
   if(sequence == value)
     ps_error("value column '", value, "' must not be the same as sequence")

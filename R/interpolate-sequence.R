@@ -17,23 +17,32 @@ ps_interpolate_sequence <- function(x, sequence = "DateTime", value = "Value",
                                     max_gap = 10L,
                                     method = "linear",
                                     step = 0.5) {
-  check_string(sequence)
-  check_string(value)
-  max_gap <- check_count(max_gap, coerce = TRUE)
+  chk_string(sequence)
+  chk_string(value)
+  max_gap <- as.integer(max_gap)
+  chk_whole_number(max_gap)
+  chk_gte(max_gap)
 
-  check_vector(by, "", unique = TRUE)
-  check_vector(method, c("linear", "constant", "constant"), length = 1L)
-  step <- check_probability(step, coerce = TRUE)
+  chk_vector(by)
+  check_values(by, "")
+  chk_unique(by)
+
+  chk_vector(method)
+  check_values(method, c("linear", "constant", "constant"))
+  check_dim(method, values = 1L)
+  step <- as.double(step)
+  chk_dbl(step)
+  chk_range(step, c(0, 1))
 
   check_data(x)
-  check_colnames(x, sequence)
-  check_colnames(x, value)
+  check_names(x, sequence)
+  check_names(x, value)
 
   if(sequence == value)
     ps_error("value column '", value, "' must not be the same as sequence")
 
   if(length(by)) {
-    check_colnames(x, by)
+    check_names(x, by)
     if(sequence %in% by)
       ps_error("sequence column '", sequence, "' must not also be in by" )
     if(value %in% by)

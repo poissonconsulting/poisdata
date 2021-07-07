@@ -9,8 +9,8 @@
 
 ps_env_map_df <- function(fun, envir = parent.frame()) {
 
-  check_environment(envir)
-  check_inherits(fun, "function")
+  chk_environment(envir)
+  chk_is(fun, "function")
 
   names <- poisdata::ps_names_datas(envir = envir)
 

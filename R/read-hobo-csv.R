@@ -104,11 +104,11 @@ read_hobo_csv_file <- function(file, orders, units, tz, quiet) {
 read_hobo_csv <- function(file = ".", orders = c("Ymd HMS", "dmy HMS"),
                           units = "degC", tz = "Etc/GMT+8", recursive = FALSE,
                           quiet = FALSE) {
-  check_string(file)
-  check_string(units)
-  check_string(tz)
-  check_flag(recursive)
-  check_flag(quiet)
+  chk_string(file)
+  chk_string(units)
+  chk_string(tz)
+  chk_flag(recursive)
+  chk_flag(quiet)
 
   if (str_detect(file, "[.]csv$")) {
     if (recursive) warning("recursive ignored as file is a single file")

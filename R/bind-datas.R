@@ -7,7 +7,7 @@
 #' @return The bound data frames as tbl data frame or an empty data frame.
 #' @export
 ps_bind_datas <- function(envir = parent.frame(), rm = TRUE) {
-  check_flag(rm)
+  chk_flag(rm)
   names <- ps_names_datas(envir)
   if(!length(names)) return(tibble::tibble())
 

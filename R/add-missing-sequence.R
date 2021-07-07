@@ -16,14 +16,16 @@
 #' datetime <- as.POSIXct("2001-01-02 03:04:06") + c(1,3,9)
 #' ps_add_missing_sequence(data.frame(DateTime = datetime, Value = c(1,3,9)))
 ps_add_missing_sequence <- function(x, sequence = "DateTime", by = character(0)) {
-  check_string(sequence)
-  check_vector(by, "", unique = TRUE)
+  chk_string(sequence)
+  chk_vector(by)
+  check_values(by, "")
+  chk_unique(by)
 
   check_data(x)
-  check_colnames(x, sequence)
+  check_names(x, sequence)
 
   if(length(by)) {
-    check_colnames(x, by)
+    check_names(x, by)
     if(sequence %in% by) ps_error("sequence column '", sequence, "' must not also be in by" )
   }
   x %<>% tibble::as_tibble()
