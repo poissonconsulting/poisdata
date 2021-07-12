@@ -19,8 +19,8 @@ ps_interpolate_sequence <- function(x, sequence = "DateTime", value = "Value",
                                     step = 0.5) {
   chk_string(sequence)
   chk_string(value)
-  max_gap <- as.integer(max_gap)
   chk_whole_number(max_gap)
+  max_gap <- as.integer(max_gap)
   chk_gte(max_gap)
 
   chk_vector(by)
@@ -30,8 +30,8 @@ ps_interpolate_sequence <- function(x, sequence = "DateTime", value = "Value",
   chk_vector(method)
   check_values(method, c("linear", "constant", "constant"))
   check_dim(method, values = 1L)
-  step <- as.double(step)
   chk_dbl(step)
+  step <- as.double(step)
   chk_range(step, c(0, 1))
 
   check_data(x)
