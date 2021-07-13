@@ -9,7 +9,7 @@
 #' @examples
 #' ps_names_datas()
 ps_names_datas <- function(envir = parent.frame()) {
-  check_environment(envir)
+  chk_environment(envir)
   names <- objects(envir = envir)
   is_df <- vapply(names, is_df, TRUE, envir)
   sort(names[is_df])

@@ -11,7 +11,7 @@ ps_load_excel <- function (file = ".",
                            rename = identity,
                            envir = parent.frame())
 {
-  check_string(file)
+  chk_string(file)
   if (!is.function(rename))
     ps_error("rename must be a function")
   if (!file.exists(file))

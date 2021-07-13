@@ -6,8 +6,9 @@
 #' @export
 ps_duplicates <- function(x, cols = colnames(x)) {
   check_data(x)
-  check_vector(cols, "")
-  check_colnames(x, cols)
+  chk_vector(cols)
+  check_values(cols, "")
+  check_names(x, cols)
 
   cols %<>% unique()
 
