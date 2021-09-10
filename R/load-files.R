@@ -28,8 +28,7 @@ ps_load_files <- function(dir = ".",
   chk_string(pattern)
   chk_flag(recursive)
   check_function(read, nargs = c(1L, .Machine$integer.max))
-
-  chkor(chk_null(add_name), chk_string(add_name))
+  chk_null_or(add_name, vld = vld_string)
   check_function(rename, nargs = c(1L, .Machine$integer.max))
   chk_environment(envir)
 
