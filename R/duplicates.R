@@ -10,6 +10,8 @@ ps_duplicates <- function(x, cols = colnames(x)) {
   check_values(cols, "")
   check_names(x, cols)
 
+  x %<>% tibble::as_tibble()
+
   cols %<>% unique()
 
   if (!length(cols)) return(x)
