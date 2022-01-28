@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">poisdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1.9001</span>
       </span>
     </div>
 
@@ -48,7 +48,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/poissonconsulting/poisdata/">
+  <a href="https://github.com/poissonconsulting/poisdata/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -67,13 +67,13 @@
   <div class="contents col-md-9">
 
 
-<div id="poisdata" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#poisdata" class="anchor"></a>poisdata</h1></div>
+<div class="section level1">
+<div class="page-header"><h1 id="poisdata">poisdata<a class="anchor" aria-label="anchor" href="#poisdata"></a>
+</h1></div>
 <p>An R package to read, write and manipulate data frames.</p>
-<div id="demonstration" class="section level2">
-<h2 class="hasAnchor">
-<a href="#demonstration" class="anchor"></a>Demonstration</h2>
+<div class="section level2">
+<h2 id="demonstration">Demonstration<a class="anchor" aria-label="anchor" href="#demonstration"></a>
+</h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/poissonconsulting/poisdata" class="external-link">poisdata</a></span><span class="op">)</span>
 <span class="va">datetime</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html" class="external-link">as.POSIXct</a></span><span class="op">(</span><span class="st">"2001-01-02 03:04:06"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">1</span>,<span class="fl">4</span>,<span class="fl">7</span><span class="op">)</span>
@@ -85,7 +85,7 @@
 <span class="co">#&gt; 3 2001-01-02 03:04:10     3</span>
 <span class="co">#&gt; 4 2001-01-02 03:04:13     4</span>
 <span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/ps_add_missing_sequence.html">ps_add_missing_sequence</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>
-<span class="co">#&gt; Warning: `parse_quosure()` is deprecated as of rlang 0.2.0.</span>
+<span class="co">#&gt; Warning: `parse_quo()` is deprecated as of rlang 0.2.0.</span>
 <span class="co">#&gt; Please use `parse_quo()` instead.</span>
 <span class="co">#&gt; This warning is displayed once per session.</span>
 <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>
@@ -111,22 +111,22 @@
 <span class="co">#&gt; 6 2001-01-02 03:04:12  3.67</span>
 <span class="co">#&gt; 7 2001-01-02 03:04:13  4</span></code></pre></div>
 </div>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <p><code>poisdata</code> is available from GitHub</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># install.packages("remotes")</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"poissonconsulting/poisdata"</span>)</span></code></pre></div>
 </div>
-<div id="contribution" class="section level2">
-<h2 class="hasAnchor">
-<a href="#contribution" class="anchor"></a>Contribution</h2>
+<div class="section level2">
+<h2 id="contribution">Contribution<a class="anchor" aria-label="anchor" href="#contribution"></a>
+</h2>
 <p>Please report any <a href="https://github.com/poissonconsulting/poisdata/issues" class="external-link">issues</a>.</p>
 <p><a href="https://github.com/poissonconsulting/poisdata/pulls" class="external-link">Pull requests</a> are always welcome.</p>
 </div>
-<div id="code-of-conduct" class="section level2">
-<h2 class="hasAnchor">
-<a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h2>
+<div class="section level2">
+<h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
+</h2>
 <p>Please note that the poisdata project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
@@ -137,10 +137,8 @@
     <div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/poissonconsulting/poisdata/">https://​github.com/​poissonconsulting/​poisdata/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/poissonconsulting/poisdata/issues">https://​github.com/​poissonconsulting/​poisdata/​issues</a>
-</li>
+<li><a href="https://github.com/poissonconsulting/poisdata/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/poissonconsulting/poisdata/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
@@ -148,7 +146,7 @@
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
 
@@ -157,6 +155,13 @@
 <ul class="list-unstyled">
 <li><a href="CONTRIBUTING.html">Contributing guide</a></li>
 <li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
+</ul>
+</div>
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing poisdata</a></li>
 </ul>
 </div>
 
@@ -189,7 +194,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.9000.</p>
 </div>
 
       </footer>
