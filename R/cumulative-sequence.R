@@ -26,7 +26,7 @@ ps_cumulative_sequence <- function(x, cumsum, data, sequence = "DateTime", value
 
   data %<>%
     tibble::as_tibble() %>%
-    dplyr::arrange(UQ(parse_quosure(sequence)))
+    dplyr::arrange(UQ(parse_quo(sequence, env = rlang::caller_env())))
 
   na <- x
   is.na(na) <- TRUE

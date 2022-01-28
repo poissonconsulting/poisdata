@@ -29,7 +29,7 @@ print(data)
 #> 3 2001-01-02 03:04:10     3
 #> 4 2001-01-02 03:04:13     4
 data <- ps_add_missing_sequence(data)
-#> Warning: `parse_quosure()` is deprecated as of rlang 0.2.0.
+#> Warning: `parse_quo()` is deprecated as of rlang 0.2.0.
 #> Please use `parse_quo()` instead.
 #> This warning is displayed once per session.
 print(data)

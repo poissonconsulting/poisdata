@@ -52,7 +52,7 @@ ps_interpolate_sequence <- function(x, sequence = "DateTime", value = "Value",
   if(!length(by)) {
     x %<>%
       tibble::as_tibble() %>%
-      dplyr::arrange(UQ(parse_quosure(sequence)))
+      dplyr::arrange(UQ(parse_quo(sequence, env = rlang::caller_env())))
 
     if(nrow(x) < 2L || max_gap == 0L) return(x)
 
