@@ -1,6 +1,6 @@
 no_hobo_data <- function(tz) {
   datetime <- Sys.time()
-  dttr2::dtt_tz(datetime) <- tz
+  lubridate::tz(datetime) <- tz
   data <- dplyr::tibble(Logger = "", DateTime = datetime,
                             Temperature = 1, FileRow = 1L,
                             FileName = "", Directory = "")
@@ -61,7 +61,7 @@ read_hobo_csv_file <- function(file, orders, units, tz, quiet) {
 
   data <- data[,1:3]
   colnames(data) <- c("FileRow", "DateTime", "Temperature")
-  data %<>% dplyr::filter(!is.na(Temperature))
+  data %<>% dplyr::filter_(~!is.na(Temperature))
 
   if (nrow(data)) {
 
@@ -76,7 +76,7 @@ read_hobo_csv_file <- function(file, orders, units, tz, quiet) {
     data$DateTime %<>% lubridate::with_tz(tz)
 
     data$Temperature %<>% udunits2::ud.convert(meta$TempUnits, units)
-    data %<>% select(Logger, DateTime, Temperature, FileRow, FileName, Directory)
+    data %<>% select_(~Logger, ~DateTime, ~Temperature, ~FileRow, ~FileName, ~Directory)
   } else
     data <- no_hobo_data(tz)
 
@@ -123,6 +123,6 @@ read_hobo_csv <- function(file = ".", orders = c("Ymd HMS", "dmy HMS"),
   }
   data <- lapply(files, read_hobo_csv_file, orders, units, tz, quiet)
   data %<>% bind_rows()
-  data %<>% arrange(Logger)
+  data %<>% arrange_(~Logger)
   data
 }
