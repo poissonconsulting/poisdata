@@ -8,16 +8,18 @@
 #' @export
 #'
 #' @examples
-#' ps_select_variable(data.frame(x = c(1,1), y = c(2,1)))
+#' ps_select_variable(data.frame(x = c(1, 1), y = c(2, 1)))
 ps_select_variable <- function(x, na_ignore = FALSE) {
   chk::chk_flag(na_ignore)
-  if(nrow(x) <= 1 || !ncol(x)) return(x)
+  if (nrow(x) <= 1 || !ncol(x)) {
+    return(x)
+  }
   y <- dplyr::summarise(x, dplyr::across(dplyr::everything(), variable_column, na_ignore = na_ignore))
   y <- vapply(y, identity, TRUE)
   y <- names(y)[y]
   x <- x[y]
-  if(!ncol(x)) {
-    x <- x[FALSE,,drop = FALSE]
+  if (!ncol(x)) {
+    x <- x[FALSE, , drop = FALSE]
   }
   x
 }

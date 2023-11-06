@@ -23,6 +23,6 @@ with the smallest interval
 in the data are added.
 }
 \examples{
-datetime <- as.POSIXct("2001-01-02 03:04:06") + c(1,3,9)
-ps_add_missing_sequence(data.frame(DateTime = datetime, Value = c(1,3,9)))
+datetime <- as.POSIXct("2001-01-02 03:04:06") + c(1, 3, 9)
+ps_add_missing_sequence(data.frame(DateTime = datetime, Value = c(1, 3, 9)))
 }

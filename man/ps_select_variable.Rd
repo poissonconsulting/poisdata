@@ -19,5 +19,5 @@ A data frame with constant columns removed.
 Select Variable Columns
 }
 \examples{
-ps_select_variable(data.frame(x = c(1,1), y = c(2,1)))
+ps_select_variable(data.frame(x = c(1, 1), y = c(2, 1)))
 }

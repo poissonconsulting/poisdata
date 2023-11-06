@@ -12,7 +12,6 @@
 #' @return A tbl data frame sorted by DateTime.
 #' @export
 ps_add_missing_datetimes <- function(x, datetime = "DateTime", by = character(0)) {
-
   .Deprecated("ps_add_missing_sequence")
   ps_add_missing_sequence(x, sequence = datetime, by = by)
 }

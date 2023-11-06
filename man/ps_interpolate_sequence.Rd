@@ -34,5 +34,5 @@ the compromise between left- and right- continuous step function.}
 A tbl data frame sorted by sequence and by.
 }
 \description{
-Interpolates missing values in sequence using \code{\link[stats]{approx}}
+Interpolates missing values in sequence using \code{\link[stats:approxfun]{stats::approx()}}
 }

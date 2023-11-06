@@ -13,8 +13,8 @@
 #' @export
 #'
 #' @examples
-#' datetime <- as.POSIXct("2001-01-02 03:04:06") + c(1,3,9)
-#' ps_add_missing_sequence(data.frame(DateTime = datetime, Value = c(1,3,9)))
+#' datetime <- as.POSIXct("2001-01-02 03:04:06") + c(1, 3, 9)
+#' ps_add_missing_sequence(data.frame(DateTime = datetime, Value = c(1, 3, 9)))
 ps_add_missing_sequence <- function(x, sequence = "DateTime", by = character(0)) {
   chk_string(sequence)
   chk_vector(by)
@@ -24,18 +24,20 @@ ps_add_missing_sequence <- function(x, sequence = "DateTime", by = character(0))
   check_data(x)
   check_names(x, sequence)
 
-  if(length(by)) {
+  if (length(by)) {
     check_names(x, by)
-    if(sequence %in% by) ps_error("sequence column '", sequence, "' must not also be in by" )
+    if (sequence %in% by) ps_error("sequence column '", sequence, "' must not also be in by")
   }
   x %<>% tibble::as_tibble()
 
-  if(!nrow(x)) return(x)
+  if (!nrow(x)) {
+    return(x)
+  }
 
   colnames <- colnames(x)
 
   # no bys
-  if(!length(by)) {
+  if (!length(by)) {
     new <- tibble::tibble(Sequence = sequence(x[[sequence]]))
     colnames(new) <- sequence
     x %<>% dplyr::left_join(new, ., by = sequence) %>%
@@ -44,9 +46,9 @@ ps_add_missing_sequence <- function(x, sequence = "DateTime", by = character(0))
     return(x)
   }
   # only one combination of bys
-  if(length(unique(plyr::id(x[by]))) == 1L) {
+  if (length(unique(plyr::id(x[by]))) == 1L) {
     x %<>% ps_add_missing_sequence(sequence = sequence)
-    x[,by] <- x[1L,by]
+    x[, by] <- x[1L, by]
     x <- x[colnames]
     return(x)
   }

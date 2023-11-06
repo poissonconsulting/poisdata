@@ -21,8 +21,9 @@ ps_cumulative_sequence <- function(x, cumsum, data, sequence = "DateTime", value
   check_names(data, value)
 
 
-  if(sequence == value)
+  if (sequence == value) {
     ps_error("value column '", value, "' must not be the same as sequence")
+  }
 
   data %<>%
     tibble::as_tibble() %>%
@@ -31,18 +32,25 @@ ps_cumulative_sequence <- function(x, cumsum, data, sequence = "DateTime", value
   na <- x
   is.na(na) <- TRUE
 
-  if(nrow(data) < 2L) return(na)
+  if (nrow(data) < 2L) {
+    return(na)
+  }
 
-  if(!identical(length(unique(diff(data[[sequence]]))), 1L))
+  if (!identical(length(unique(diff(data[[sequence]]))), 1L)) {
     ps_error("sequence must be unique and complete (try ps_add_missing_sequence)")
+  }
 
-  if(!x %in% data[[sequence]]) return(na)
+  if (!x %in% data[[sequence]]) {
+    return(na)
+  }
 
-  data <- data[data[[sequence]] > x,]
+  data <- data[data[[sequence]] > x, ]
   data$cumsum <- cumsum(data[[value]])
-  data <- data[!is.na(data$cumsum) & data$cumsum >= cumsum,]
+  data <- data[!is.na(data$cumsum) & data$cumsum >= cumsum, ]
 
-  if(!nrow(data)) return(na)
+  if (!nrow(data)) {
+    return(na)
+  }
 
   data[[sequence]][1]
 }
