@@ -5,5 +5,4 @@
 #' @importFrom rlang .data parse_quo UQ
 #' @importFrom udunits2 ud.convert
 #' @importFrom yesno yesno
-#' @importFrom checkr check_function
 NULL
