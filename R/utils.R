@@ -1,7 +1,8 @@
 variable_column <- function(x, na_ignore = FALSE) {
   x <- unique(x)
-  if(na_ignore)
+  if (na_ignore) {
     x <- x[!is.na(x)]
+  }
   length(x) > 1
 }
 
@@ -13,7 +14,9 @@ remove_x <- function(x, envir) remove(list = x, envir = envir)
 
 seq_datetime <- function(x) {
   x <- sort(x)
-  if(length(x) < 2L) return(x)
+  if (length(x) < 2L) {
+    return(x)
+  }
   from <- dplyr::first(x)
   to <- dplyr::last(x)
   by <- min(diff(x))
@@ -22,7 +25,9 @@ seq_datetime <- function(x) {
 
 sequence <- function(x) {
   x <- sort(x)
-  if(length(x) < 2L) return(x)
+  if (length(x) < 2L) {
+    return(x)
+  }
   from <- dplyr::first(x)
   to <- dplyr::last(x)
   by <- min(diff(x))
@@ -39,20 +44,24 @@ size_gaps <- function(x) {
   stopifnot(is.logical(x))
   stopifnot(all(!is.na(x)))
 
-  if(!length(x)) return(integer(0))
+  if (!length(x)) {
+    return(integer(0))
+  }
   gaps <- rep(0L, length(x))
 
   which <- which(x)
-  if(!length(which)) return(gaps)
+  if (!length(which)) {
+    return(gaps)
+  }
 
   contin <- c(diff(which), 2L) == 1L
   n <- length(contin)
   gap <- rep(1L, n)
   i <- 1L
-  while(i <= n) {
-    if(contin[i]) {
+  while (i <= n) {
+    if (contin[i]) {
       j <- i + 1L
-      while(contin[j]) {
+      while (contin[j]) {
         j <- j + 1L
       }
       gap[i:j] <- j - i + 1L
@@ -64,4 +73,3 @@ size_gaps <- function(x) {
   gaps[which] <- gap
   gaps
 }
-

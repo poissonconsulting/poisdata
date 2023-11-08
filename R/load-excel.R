@@ -7,20 +7,22 @@
 #' @param envir The environment to assign the data frames.
 #' @return An invisible character vector of the sheet names.
 #' @export
-ps_load_excel <- function (file = ".",
-                           rename = identity,
-                           envir = parent.frame())
-{
+ps_load_excel <- function(file = ".",
+                          rename = identity,
+                          envir = parent.frame()) {
   chk_string(file)
-  if (!is.function(rename))
+  if (!is.function(rename)) {
     ps_error("rename must be a function")
-  if (!file.exists(file))
+  }
+  if (!file.exists(file)) {
     ps_error("file '", file, "' does not exist")
+  }
 
   sheets <- readxl::excel_sheets(file)
 
-  data <- purrr::map(sheets, function(x){
-    readxl::read_excel(file, sheet = x)})
+  data <- purrr::map(sheets, function(x) {
+    readxl::read_excel(file, sheet = x)
+  })
 
   names(data) <- sheets
   names(data) %<>% rename() %>%
@@ -31,4 +33,3 @@ ps_load_excel <- function (file = ".",
   })
   invisible(sheets)
 }
-

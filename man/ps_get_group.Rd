@@ -21,5 +21,5 @@ An ordered factor of the group.
 Get Group
 }
 \examples{
-ps_get_group(c(-Inf,-1,0,19,20,69,70,Inf))
+ps_get_group(c(-Inf, -1, 0, 19, 20, 69, 70, Inf))
 }

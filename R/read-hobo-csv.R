@@ -1,9 +1,11 @@
 no_hobo_data <- function(tz) {
   datetime <- Sys.time()
   lubridate::tz(datetime) <- tz
-  data <- dplyr::tibble(Logger = "", DateTime = datetime,
-                            Temperature = 1, FileRow = 1L,
-                            FileName = "", Directory = "")
+  data <- dplyr::tibble(
+    Logger = "", DateTime = datetime,
+    Temperature = 1, FileRow = 1L,
+    FileName = "", Directory = ""
+  )
   data %<>% slice(0)
   data
 }
@@ -14,8 +16,9 @@ rename_hobo_data <- function(data, units) {
 }
 
 check_hobo_csv_data_colname <- function(colnames, pattern, which, file) {
-  if (!str_detect(colnames[which], pattern))
+  if (!str_detect(colnames[which], pattern)) {
     ps_error("Column '", colnames[which], "' in file '", file, "', does not match the regular expression '", pattern, "'")
+  }
 }
 
 check_hobo_csv_data_colnames <- function(data, file) {
@@ -32,24 +35,26 @@ check_hobo_csv_data <- function(data, file) {
 }
 
 extract_hobo_meta_data_units <- function(colname) {
-  unit <- str_extract(colname,  "(?<=Temp, )(.{1,3})(?= [(LGR])")[[1]]
+  unit <- str_extract(colname, "(?<=Temp, )(.{1,3})(?= [(LGR])")[[1]]
   unit %<>% str_replace("[?][?]C", "degC")
   unit %<>% str_replace("[?][?]F", "degF")
   unit
 }
 
 extract_hobo_meta_data_logger <- function(colname) {
-  str_extract(colname,  "(?<=LGR S[/]N[:] )(\\d+)(?=,|[)])")[[1]]
+  str_extract(colname, "(?<=LGR S[/]N[:] )(\\d+)(?=,|[)])")[[1]]
 }
 
 extract_hobo_meta_data_tz_offset <- function(colname) {
-  str_extract(colname,  "(?<=^Date Time, GMT)([^\n]{2,})(?=$)")[[1]]
+  str_extract(colname, "(?<=^Date Time, GMT)([^\n]{2,})(?=$)")[[1]]
 }
 
 extract_hobo_meta_data <- function(colnames) {
-  tibble(Logger = extract_hobo_meta_data_logger(colnames[3]),
-             TempUnits = extract_hobo_meta_data_units(colnames[3]),
-             TimeZoneOffset = extract_hobo_meta_data_tz_offset(colnames[2]))
+  tibble(
+    Logger = extract_hobo_meta_data_logger(colnames[3]),
+    TempUnits = extract_hobo_meta_data_units(colnames[3]),
+    TimeZoneOffset = extract_hobo_meta_data_tz_offset(colnames[2])
+  )
 }
 
 read_hobo_csv_file <- function(file, orders, units, tz, quiet) {
@@ -59,12 +64,11 @@ read_hobo_csv_file <- function(file, orders, units, tz, quiet) {
 
   meta <- extract_hobo_meta_data(colnames(data))
 
-  data <- data[,1:3]
+  data <- data[, 1:3]
   colnames(data) <- c("FileRow", "DateTime", "Temperature")
-  data %<>% dplyr::filter_(~!is.na(Temperature))
+  data %<>% dplyr::filter_(~ !is.na(Temperature))
 
   if (nrow(data)) {
-
     data$FileName <- str_replace(basename(file), "[.]csv$", "")
     data$Directory <- dirname(file)
 
@@ -77,8 +81,9 @@ read_hobo_csv_file <- function(file, orders, units, tz, quiet) {
 
     data$Temperature %<>% udunits2::ud.convert(meta$TempUnits, units)
     data %<>% select_(~Logger, ~DateTime, ~Temperature, ~FileRow, ~FileName, ~Directory)
-  } else
+  } else {
     data <- no_hobo_data(tz)
+  }
 
   data %<>% rename_hobo_data(units)
 
@@ -91,9 +96,9 @@ read_hobo_csv_file <- function(file, orders, units, tz, quiet) {
 #' Read Hobo CSVs
 #'
 #' @param file A string of the file or directory.
-#' @param orders A character vector of date-time formats used by \code{\link[lubridate]{parse_date_time}}.
-#' @param units A string of the units to convert the temperature data to using  \code{\link[udunits2]{ud.convert}}.
-#' @param tz A string of the time zone to convert the date times to using \code{\link[lubridate]{with_tz}}.
+#' @param orders A character vector of date-time formats used by [lubridate::parse_date_time()].
+#' @param units A string of the units to convert the temperature data to using  [udunits2::ud.convert()].
+#' @param tz A string of the time zone to convert the date times to using [lubridate::with_tz()].
 #' @param recursive A flag indicating whether to read files from subdirectories.
 #' @param quiet A flag indicating whether to provide messages.
 #' Ignored if file is a file (as opposed to a directory).

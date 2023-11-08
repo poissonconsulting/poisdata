@@ -28,10 +28,12 @@ Imports: checkr,
           yesno
 Suggests: testthat,
           withr,
-          covr
+          covr,
+          sf
 Remotes: poissonconsulting/dttr2,
          poissonconsulting/poisutils
 SystemRequirements: udunits
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.3
+Roxygen: list(markdown = TRUE)
