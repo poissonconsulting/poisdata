@@ -26,9 +26,9 @@ ps_load_files <- function(dir = ".",
   chk_string(dir)
   chk_string(pattern)
   chk_flag(recursive)
-  check_function(read, nargs = c(1L, .Machine$integer.max))
+  chk_function(read)
   chk_null_or(add_name, vld = vld_string)
-  check_function(rename, nargs = c(1L, .Machine$integer.max))
+  chk_function(rename)
   chk_environment(envir)
 
   if (!dir.exists(dir)) ps_error("directory '", dir, "' does not exist")
