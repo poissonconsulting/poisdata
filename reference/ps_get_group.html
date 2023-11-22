@@ -53,27 +53,32 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">ps_get_group</span><span class="op">(</span>
-  <span class="va">x</span>,
-  breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>Recruit <span class="op">=</span> <span class="fl">0</span>, Juvenile <span class="op">=</span> <span class="fl">20</span>, Subadult <span class="op">=</span> <span class="fl">50</span>, Adult <span class="op">=</span> <span class="fl">70</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">ps_get_group</span><span class="op">(</span></span>
+<span>  <span class="va">x</span>,</span>
+<span>  breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>Recruit <span class="op">=</span> <span class="fl">0</span>, Juvenile <span class="op">=</span> <span class="fl">20</span>, Subadult <span class="op">=</span> <span class="fl">50</span>, Adult <span class="op">=</span> <span class="fl">70</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>x</dt>
 <dd><p>A numeric or integer vector</p></dd>
+
+
 <dt>breaks</dt>
 <dd><p>A uniquely named numeric vector of the first value of each group.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>An ordered factor of the group.</p>
+    
+
+<p>An ordered factor of the group.</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">ps_get_group</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="cn">Inf</span>,<span class="op">-</span><span class="fl">1</span>,<span class="fl">0</span>,<span class="fl">19</span>,<span class="fl">20</span>,<span class="fl">69</span>,<span class="fl">70</span>,<span class="cn">Inf</span><span class="op">)</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">ps_get_group</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="cn">Inf</span>, <span class="op">-</span><span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">19</span>, <span class="fl">20</span>, <span class="fl">69</span>, <span class="fl">70</span>, <span class="cn">Inf</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] &lt;NA&gt;     &lt;NA&gt;     Recruit  Recruit  Juvenile Subadult Adult    Adult   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Levels: Recruit &lt; Juvenile &lt; Subadult &lt; Adult</span>
 </code></pre></div>
@@ -90,7 +95,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

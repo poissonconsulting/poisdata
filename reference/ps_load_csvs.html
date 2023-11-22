@@ -53,34 +53,47 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">ps_load_csvs</span><span class="op">(</span>
-  dir <span class="op">=</span> <span class="st">"."</span>,
-  recursive <span class="op">=</span> <span class="cn">FALSE</span>,
-  add_name <span class="op">=</span> <span class="cn">NULL</span>,
-  rename <span class="op">=</span> <span class="va">identity</span>,
-  envir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sys.parent.html" class="external-link">parent.frame</a></span><span class="op">(</span><span class="op">)</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">ps_load_csvs</span><span class="op">(</span></span>
+<span>  dir <span class="op">=</span> <span class="st">"."</span>,</span>
+<span>  recursive <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  add_name <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  rename <span class="op">=</span> <span class="va">identity</span>,</span>
+<span>  envir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sys.parent.html" class="external-link">parent.frame</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>dir</dt>
 <dd><p>A string of the directory.</p></dd>
+
+
 <dt>recursive</dt>
 <dd><p>A flag indicating whether to include files in subdirectories.</p></dd>
+
+
 <dt>add_name</dt>
 <dd><p>A string specifying the name of the column to add to each data frame with the file names (including subdirectories).</p></dd>
+
+
 <dt>rename</dt>
 <dd><p>A function that is used to rename files (after removing the extension) before they are passed to <code>make.names</code>.</p></dd>
+
+
 <dt>envir</dt>
 <dd><p>The environment to assign the data frames.</p></dd>
+
+
 <dt>...</dt>
 <dd><p>Additional arguments passed to <code>read</code>.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>An invisible character vector of the file names.</p>
+    
+
+<p>An invisible character vector of the file names.</p>
     </div>
 
   </div>
@@ -95,7 +108,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>
