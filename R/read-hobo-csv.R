@@ -73,14 +73,16 @@ read_hobo_csv_file <- function(file, orders, units, tz, quiet) {
     data$Directory <- dirname(file)
 
     data$Logger <- meta$Logger
-
     data$DateTime %<>% lubridate::parse_date_time(orders = orders, tz = "UTC")
 
     data$DateTime %<>% magrittr::subtract(lubridate::hm(meta$TimeZoneOffset))
     data$DateTime %<>% lubridate::with_tz(tz)
 
-    data$Temperature %<>% udunits2::ud.convert(meta$TempUnits, units)
-    data %<>% select_(~Logger, ~DateTime, ~Temperature, ~FileRow, ~FileName, ~Directory)
+    data$Temperature %<>% set_units(meta$TempUnits, mode = "standard") %>%
+      set_units(units, mode = "standard") %>%
+      drop_units()
+
+    data %<>% select("Logger", "DateTime", "Temperature", "FileRow", "FileName", "Directory")
   } else {
     data <- no_hobo_data(tz)
   }
@@ -97,7 +99,7 @@ read_hobo_csv_file <- function(file, orders, units, tz, quiet) {
 #'
 #' @param file A string of the file or directory.
 #' @param orders A character vector of date-time formats used by [lubridate::parse_date_time()].
-#' @param units A string of the units to convert the temperature data to using  [udunits2::ud.convert()].
+#' @param units A string of the units to convert the temperature data to using  [units::set_units()].
 #' @param tz A string of the time zone to convert the date times to using [lubridate::with_tz()].
 #' @param recursive A flag indicating whether to read files from subdirectories.
 #' @param quiet A flag indicating whether to provide messages.

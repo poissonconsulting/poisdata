@@ -22,7 +22,7 @@ Imports:
     rlang,
     stringr,
     tibble,
-    udunits2,
+    units,
     yesno
 Suggests: dttr2,
           testthat,

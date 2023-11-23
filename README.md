@@ -5,8 +5,7 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![Codecov test
 coverage](https://codecov.io/gh/poissonconsulting/poisdata/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/poisdata?branch=master)
-[![R build
-status](https://github.com/poissonconsulting/poisdata/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/poisdata/actions)
+[![R-CMD-check](https://github.com/poissonconsulting/poisdata/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/poissonconsulting/poisdata/actions/workflows/R-CMD-check.yaml)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 <!-- badges: end -->
