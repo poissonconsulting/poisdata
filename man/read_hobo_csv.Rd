@@ -18,7 +18,7 @@ read_hobo_csv(
 
 \item{orders}{A character vector of date-time formats used by \code{\link[lubridate:parse_date_time]{lubridate::parse_date_time()}}.}
 
-\item{units}{A string of the units to convert the temperature data to using  \code{\link[udunits2:ud.convert]{udunits2::ud.convert()}}.}
+\item{units}{A string of the units to convert the temperature data to using  \code{\link[units:units]{units::set_units()}}.}
 
 \item{tz}{A string of the time zone to convert the date times to using \code{\link[lubridate:with_tz]{lubridate::with_tz()}}.}
 

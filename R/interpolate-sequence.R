@@ -66,7 +66,7 @@ ps_interpolate_sequence <- function(x, sequence = "DateTime", value = "Value",
     }
     gap <- size_gaps(is.na(x[[value]]))
     x[[value]] <- stats::approx(x[[value]],
-      xout = 1:length(x[[value]]),
+      xout = seq_along(x[[value]]),
       method = method, f = step
     )$y
     is.na(x[[value]][gap > max_gap]) <- TRUE
