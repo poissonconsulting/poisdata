@@ -14,7 +14,9 @@ ps_select_variable <- function(x, na_ignore = FALSE) {
   if (nrow(x) <= 1 || !ncol(x)) {
     return(x)
   }
-  y <- dplyr::summarise(x, dplyr::across(dplyr::everything(), variable_column, na_ignore = na_ignore))
+  y <- dplyr::summarise(x, dplyr::across(dplyr::everything(), function(x) {
+    variable_column(x, na_ignore = na_ignore)
+  }))
   y <- vapply(y, identity, TRUE)
   y <- names(y)[y]
   x <- x[y]
