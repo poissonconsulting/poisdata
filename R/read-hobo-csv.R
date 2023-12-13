@@ -66,7 +66,7 @@ read_hobo_csv_file <- function(file, orders, units, tz, quiet) {
 
   data <- data[, 1:3]
   colnames(data) <- c("FileRow", "DateTime", "Temperature")
-  data %<>% dplyr::filter_(~ !is.na(Temperature))
+  data %<>% dplyr::filter(!is.na(.data$Temperature))
 
   if (nrow(data)) {
     data$FileName <- str_replace(basename(file), "[.]csv$", "")
@@ -130,6 +130,6 @@ read_hobo_csv <- function(file = ".", orders = c("Ymd HMS", "dmy HMS"),
   }
   data <- lapply(files, read_hobo_csv_file, orders, units, tz, quiet)
   data %<>% bind_rows()
-  data %<>% arrange_(~Logger)
+  data %<>% arrange(.data$Logger)
   data
 }
