@@ -13,10 +13,7 @@ ps_get_group <- function(x, breaks = c(
                            Subadult = 50, Adult = 70
                          )) {
   chk_vector(x)
-  chkor(
-    check_values(x, c(1, NA)),
-    check_values(x, c(1L, NA))
-  )
+  chk_numeric(x)
   check_dim(breaks, values = c(1, .Machine$integer.max))
   chk_unique(breaks)
   chk_sorted(breaks)
