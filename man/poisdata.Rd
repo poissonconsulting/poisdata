@@ -12,3 +12,17 @@ Read and write data for Poisson Consulting scripts and packages.
 \seealso{
 \url{https://github.com/poissonconsulting/poisdata}
 }
+\author{
+\strong{Maintainer}: Joe Thorley \email{joe@poissonconsulting.ca}
+
+Authors:
+\itemize{
+  \item Seb Dalgarno
+}
+
+Other contributors:
+\itemize{
+  \item Colton Stephens [contributor]
+}
+
+}
