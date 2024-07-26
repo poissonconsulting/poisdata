@@ -1,96 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/CODE_OF_CONDUCT.html</loc>
-  </url>
-  <url>
-    <loc>/CONTRIBUTING.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>/SUPPORT.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/news/index.html</loc>
-  </url>
-  <url>
-    <loc>/pull_request_template.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/poisdata.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ps_add_missing_datetimes.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ps_add_missing_sequence.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ps_bind_datas.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ps_bind_files.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ps_cumulative_sequence.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ps_cut_to_numeric.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ps_duplicates.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ps_env_map_df.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ps_get_group.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ps_interpolate_sequence.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ps_load_csvs.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ps_load_excel.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ps_load_files.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ps_names_datas.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ps_replace_values.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ps_select_variable.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ps_write_data_csvs.html</loc>
-  </url>
-  <url>
-    <loc>/reference/read_hobo_csv.html</loc>
-  </url>
-  <url>
-    <loc>/reference/size_gaps.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>/404.html</loc></url>
+<url><loc>/CODE_OF_CONDUCT.html</loc></url>
+<url><loc>/CONTRIBUTING.html</loc></url>
+<url><loc>/LICENSE-text.html</loc></url>
+<url><loc>/LICENSE.html</loc></url>
+<url><loc>/SUPPORT.html</loc></url>
+<url><loc>/authors.html</loc></url>
+<url><loc>/index.html</loc></url>
+<url><loc>/news/index.html</loc></url>
+<url><loc>/reference/index.html</loc></url>
+<url><loc>/reference/poisdata.html</loc></url>
+<url><loc>/reference/ps_add_missing_datetimes.html</loc></url>
+<url><loc>/reference/ps_add_missing_sequence.html</loc></url>
+<url><loc>/reference/ps_bind_datas.html</loc></url>
+<url><loc>/reference/ps_bind_files.html</loc></url>
+<url><loc>/reference/ps_cumulative_sequence.html</loc></url>
+<url><loc>/reference/ps_cut_to_numeric.html</loc></url>
+<url><loc>/reference/ps_duplicates.html</loc></url>
+<url><loc>/reference/ps_env_map_df.html</loc></url>
+<url><loc>/reference/ps_get_group.html</loc></url>
+<url><loc>/reference/ps_interpolate_sequence.html</loc></url>
+<url><loc>/reference/ps_load_csvs.html</loc></url>
+<url><loc>/reference/ps_load_excel.html</loc></url>
+<url><loc>/reference/ps_load_files.html</loc></url>
+<url><loc>/reference/ps_names_datas.html</loc></url>
+<url><loc>/reference/ps_replace_values.html</loc></url>
+<url><loc>/reference/ps_select_variable.html</loc></url>
+<url><loc>/reference/ps_write_data_csvs.html</loc></url>
+<url><loc>/reference/read_hobo_csv.html</loc></url>
+<url><loc>/reference/size_gaps.html</loc></url>
 </urlset>
+
