@@ -15,5 +15,5 @@ ps_duplicates(x, cols = colnames(x))
 A tibble with just the duplicate rows included.
 }
 \description{
-Duplicates
+DEPRECATED
 }
