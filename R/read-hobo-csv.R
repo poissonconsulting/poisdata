@@ -58,7 +58,7 @@ extract_hobo_meta_data <- function(colnames) {
 }
 
 read_hobo_csv_file <- function(file, orders, units, tz, quiet) {
-  suppressMessages(data <- readr::read_csv(file, skip = 1))
+  suppressMessages(data <- readr::read_csv(file, skip = 1, guess_max = Inf))
 
   check_hobo_csv_data(data, file)
 
