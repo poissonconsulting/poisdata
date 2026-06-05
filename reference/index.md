@@ -1,0 +1,44 @@
+# Package index
+
+## All functions
+
+- [`poisdata`](https://poissonconsulting.github.io/poisdata/reference/poisdata.md)
+  [`package-poisdata`](https://poissonconsulting.github.io/poisdata/reference/poisdata.md)
+  [`poisdata-package`](https://poissonconsulting.github.io/poisdata/reference/poisdata.md)
+  : poisdata
+- [`ps_add_missing_datetimes()`](https://poissonconsulting.github.io/poisdata/reference/ps_add_missing_datetimes.md)
+  : Add Missing SequenceDate Times.
+- [`ps_add_missing_sequence()`](https://poissonconsulting.github.io/poisdata/reference/ps_add_missing_sequence.md)
+  : Add Missing Sequence.
+- [`ps_bind_datas()`](https://poissonconsulting.github.io/poisdata/reference/ps_bind_datas.md)
+  : Bind Data
+- [`ps_bind_files()`](https://poissonconsulting.github.io/poisdata/reference/ps_bind_files.md)
+  : Bind Data
+- [`ps_cumulative_sequence()`](https://poissonconsulting.github.io/poisdata/reference/ps_cumulative_sequence.md)
+  : Cumulative Sequence
+- [`ps_cut_to_numeric()`](https://poissonconsulting.github.io/poisdata/reference/ps_cut_to_numeric.md)
+  : Cut to Numeric
+- [`ps_duplicates()`](https://poissonconsulting.github.io/poisdata/reference/ps_duplicates.md)
+  : Duplicates
+- [`ps_env_map_df()`](https://poissonconsulting.github.io/poisdata/reference/ps_env_map_df.md)
+  : Environment map
+- [`ps_get_group()`](https://poissonconsulting.github.io/poisdata/reference/ps_get_group.md)
+  : Get Group
+- [`ps_interpolate_sequence()`](https://poissonconsulting.github.io/poisdata/reference/ps_interpolate_sequence.md)
+  : Interpolate Sequence
+- [`ps_load_csvs()`](https://poissonconsulting.github.io/poisdata/reference/ps_load_csvs.md)
+  : Load CSVs
+- [`ps_load_excel()`](https://poissonconsulting.github.io/poisdata/reference/ps_load_excel.md)
+  : Load Excel sheets
+- [`ps_load_files()`](https://poissonconsulting.github.io/poisdata/reference/ps_load_files.md)
+  : Load Files
+- [`ps_names_datas()`](https://poissonconsulting.github.io/poisdata/reference/ps_names_datas.md)
+  : Names Data Frames
+- [`ps_replace_values()`](https://poissonconsulting.github.io/poisdata/reference/ps_replace_values.md)
+  : Replace values over set of columns
+- [`ps_select_variable()`](https://poissonconsulting.github.io/poisdata/reference/ps_select_variable.md)
+  : Select Variable Columns
+- [`ps_write_data_csvs()`](https://poissonconsulting.github.io/poisdata/reference/ps_write_data_csvs.md)
+  : Write Data
+- [`read_hobo_csv()`](https://poissonconsulting.github.io/poisdata/reference/read_hobo_csv.md)
+  : Read Hobo CSVs
