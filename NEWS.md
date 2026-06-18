@@ -1,3 +1,11 @@
+<!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
+
+# poisdata 0.0.1.9003
+
+* Add fledge-bump workflow
+* Add fledge-tag-on-merge workflow
+
+
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
 # poisdata 0.0.1.9002
