@@ -1,5 +1,10 @@
 # Changelog
 
+## poisdata 0.0.1.9003
+
+- Add fledge-bump workflow
+- Add fledge-tag-on-merge workflow
+
 ## poisdata 0.0.1.9002
 
 - Increased `guess_max` in
