@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# poisdata 0.0.1.9004
+
+- Same as previous version.
+
+
 # poisdata 0.0.1.9003
 
 * Add fledge-bump workflow
