@@ -2,9 +2,12 @@ no_hobo_data <- function(tz) {
   datetime <- Sys.time()
   lubridate::tz(datetime) <- tz
   data <- dplyr::tibble(
-    Logger = "", DateTime = datetime,
-    Temperature = 1, FileRow = 1L,
-    FileName = "", Directory = ""
+    Logger = "",
+    DateTime = datetime,
+    Temperature = 1,
+    FileRow = 1L,
+    FileName = "",
+    Directory = ""
   )
   data %<>% slice(0)
   data
@@ -17,7 +20,15 @@ rename_hobo_data <- function(data, units) {
 
 check_hobo_csv_data_colname <- function(colnames, pattern, which, file) {
   if (!str_detect(colnames[which], pattern)) {
-    ps_error("Column '", colnames[which], "' in file '", file, "', does not match the regular expression '", pattern, "'")
+    ps_error(
+      "Column '",
+      colnames[which],
+      "' in file '",
+      file,
+      "', does not match the regular expression '",
+      pattern,
+      "'"
+    )
   }
 }
 
@@ -78,18 +89,29 @@ read_hobo_csv_file <- function(file, orders, units, tz, quiet) {
     data$DateTime %<>% magrittr::subtract(lubridate::hm(meta$TimeZoneOffset))
     data$DateTime %<>% lubridate::with_tz(tz)
 
-    data$Temperature %<>% set_units(meta$TempUnits, mode = "standard") %>%
+    data$Temperature %<>%
+      set_units(meta$TempUnits, mode = "standard") %>%
       set_units(units, mode = "standard") %>%
       drop_units()
 
-    data %<>% select("Logger", "DateTime", "Temperature", "FileRow", "FileName", "Directory")
+    data %<>%
+      select(
+        "Logger",
+        "DateTime",
+        "Temperature",
+        "FileRow",
+        "FileName",
+        "Directory"
+      )
   } else {
     data <- no_hobo_data(tz)
   }
 
   data %<>% rename_hobo_data(units)
 
-  if (!quiet) message("imported ", nrow(data), " rows of data from '", file, "'")
+  if (!quiet) {
+    message("imported ", nrow(data), " rows of data from '", file, "'")
+  }
 
   data %<>% as_tibble()
   data
@@ -108,9 +130,14 @@ read_hobo_csv_file <- function(file, orders, units, tz, quiet) {
 #' @export
 #' @examples
 #' read_hobo_csv(system.file("hobo", "10723440.csv", package = "poisdata"))
-read_hobo_csv <- function(file = ".", orders = c("Ymd HMS", "dmy HMS"),
-                          units = "degC", tz = "Etc/GMT+8", recursive = FALSE,
-                          quiet = FALSE) {
+read_hobo_csv <- function(
+  file = ".",
+  orders = c("Ymd HMS", "dmy HMS"),
+  units = "degC",
+  tz = "Etc/GMT+8",
+  recursive = FALSE,
+  quiet = FALSE
+) {
   chk_string(file)
   chk_string(units)
   chk_string(tz)
@@ -118,10 +145,17 @@ read_hobo_csv <- function(file = ".", orders = c("Ymd HMS", "dmy HMS"),
   chk_flag(quiet)
 
   if (str_detect(file, "[.]csv$")) {
-    if (recursive) warning("recursive ignored as file is a single file")
+    if (recursive) {
+      warning("recursive ignored as file is a single file")
+    }
     return(read_hobo_csv_file(file, orders, units, tz, quiet))
   }
-  files <- list.files(file, pattern = "[.]csv$", full.names = TRUE, recursive = recursive)
+  files <- list.files(
+    file,
+    pattern = "[.]csv$",
+    full.names = TRUE,
+    recursive = recursive
+  )
   if (!length(files)) {
     warning("no .csv files found")
     data <- no_hobo_data(tz)

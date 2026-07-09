@@ -15,7 +15,11 @@
 #' @examples
 #' datetime <- as.POSIXct("2001-01-02 03:04:06") + c(1, 3, 9)
 #' ps_add_missing_sequence(data.frame(DateTime = datetime, Value = c(1, 3, 9)))
-ps_add_missing_sequence <- function(x, sequence = "DateTime", by = character(0)) {
+ps_add_missing_sequence <- function(
+  x,
+  sequence = "DateTime",
+  by = character(0)
+) {
   chk_string(sequence)
   chk_vector(by)
   check_values(by, "")
@@ -26,7 +30,9 @@ ps_add_missing_sequence <- function(x, sequence = "DateTime", by = character(0))
 
   if (length(by)) {
     check_names(x, by)
-    if (sequence %in% by) ps_error("sequence column '", sequence, "' must not also be in by")
+    if (sequence %in% by) {
+      ps_error("sequence column '", sequence, "' must not also be in by")
+    }
   }
   x %<>% tibble::as_tibble()
 
@@ -40,7 +46,8 @@ ps_add_missing_sequence <- function(x, sequence = "DateTime", by = character(0))
   if (!length(by)) {
     new <- tibble::tibble(Sequence = sequence(x[[sequence]]))
     colnames(new) <- sequence
-    x %<>% dplyr::left_join(new, ., by = sequence) %>%
+    x %<>%
+      dplyr::left_join(new, ., by = sequence) %>%
       dplyr::arrange(UQ(parse_quo(sequence, env = rlang::caller_env())))
     x <- x[colnames]
     return(x)

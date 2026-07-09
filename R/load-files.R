@@ -16,13 +16,16 @@
 #' @param ... Additional arguments passed to `read`.
 #' @return An invisible character vector of the file names.
 #' @export
-ps_load_files <- function(dir = ".",
-                          pattern = "[.]csv$",
-                          recursive = FALSE,
-                          read = readr::read_csv,
-                          add_name = NULL,
-                          rename = identity,
-                          envir = parent.frame(), ...) {
+ps_load_files <- function(
+  dir = ".",
+  pattern = "[.]csv$",
+  recursive = FALSE,
+  read = readr::read_csv,
+  add_name = NULL,
+  rename = identity,
+  envir = parent.frame(),
+  ...
+) {
   chk_string(dir)
   chk_string(pattern)
   chk_flag(recursive)
@@ -31,14 +34,20 @@ ps_load_files <- function(dir = ".",
   chk_function(rename)
   chk_environment(envir)
 
-  if (!dir.exists(dir)) ps_error("directory '", dir, "' does not exist")
+  if (!dir.exists(dir)) {
+    ps_error("directory '", dir, "' does not exist")
+  }
 
-  file_names <- list.files(dir,
-    pattern = pattern, full.names = TRUE,
+  file_names <- list.files(
+    dir,
+    pattern = pattern,
+    full.names = TRUE,
     recursive = recursive
   )
-  files <- list.files(dir,
-    pattern = pattern, full.names = FALSE,
+  files <- list.files(
+    dir,
+    pattern = pattern,
+    full.names = FALSE,
     recursive = recursive
   )
   if (!length(files)) {
@@ -59,7 +68,12 @@ ps_load_files <- function(dir = ".",
 
   if (any(fail)) {
     failed <- data[fail] %>% unlist()
-    ps_warning("the following ", ps_plural("file", length(failed)), " failed to read:", ps_punctuate(failed, "and"))
+    ps_warning(
+      "the following ",
+      ps_plural("file", length(failed)),
+      " failed to read:",
+      ps_punctuate(failed, "and")
+    )
   }
 
   data <- data[!fail]
@@ -70,10 +84,11 @@ ps_load_files <- function(dir = ".",
   }
 
   if (!is.null(add_name)) {
-    data %<>% purrr::imap(function(x, name) {
-      x[add_name] <- name
-      x
-    })
+    data %<>%
+      purrr::imap(function(x, name) {
+        x[add_name] <- name
+        x
+      })
   }
 
   names(data) %<>%

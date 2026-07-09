@@ -10,7 +10,13 @@
 #' @param value A string of the value column.
 #' @return A scalar of the end.
 #' @export
-ps_cumulative_sequence <- function(x, cumsum, data, sequence = "DateTime", value = "Value") {
+ps_cumulative_sequence <- function(
+  x,
+  cumsum,
+  data,
+  sequence = "DateTime",
+  value = "Value"
+) {
   check_dim(x, values = 1)
   check_dim(cumsum, values = 1)
   chk_string(sequence)
@@ -19,7 +25,6 @@ ps_cumulative_sequence <- function(x, cumsum, data, sequence = "DateTime", value
   check_data(data)
   check_names(data, sequence)
   check_names(data, value)
-
 
   if (sequence == value) {
     ps_error("value column '", value, "' must not be the same as sequence")
@@ -37,7 +42,9 @@ ps_cumulative_sequence <- function(x, cumsum, data, sequence = "DateTime", value
   }
 
   if (!identical(length(unique(diff(data[[sequence]]))), 1L)) {
-    ps_error("sequence must be unique and complete (try ps_add_missing_sequence)")
+    ps_error(
+      "sequence must be unique and complete (try ps_add_missing_sequence)"
+    )
   }
 
   if (!x %in% data[[sequence]]) {

@@ -7,9 +7,11 @@
 #' @param envir The environment to assign the data frames.
 #' @return An invisible character vector of the sheet names.
 #' @export
-ps_load_excel <- function(file = ".",
-                          rename = identity,
-                          envir = parent.frame()) {
+ps_load_excel <- function(
+  file = ".",
+  rename = identity,
+  envir = parent.frame()
+) {
   chk_string(file)
   if (!is.function(rename)) {
     ps_error("rename must be a function")
@@ -25,8 +27,7 @@ ps_load_excel <- function(file = ".",
   })
 
   names(data) <- sheets
-  names(data) %<>% rename() %>%
-    make.names(unique = TRUE)
+  names(data) %<>% rename() %>% make.names(unique = TRUE)
 
   purrr::imap(data, function(x, name) {
     assign(name, x, envir = envir)

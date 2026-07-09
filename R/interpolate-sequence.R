@@ -12,11 +12,15 @@
 #' the compromise between left- and right- continuous step function.
 #' @return A tbl data frame sorted by sequence and by.
 #' @export
-ps_interpolate_sequence <- function(x, sequence = "DateTime", value = "Value",
-                                    by = character(0),
-                                    max_gap = 10L,
-                                    method = "linear",
-                                    step = 0.5) {
+ps_interpolate_sequence <- function(
+  x,
+  sequence = "DateTime",
+  value = "Value",
+  by = character(0),
+  max_gap = 10L,
+  method = "linear",
+  step = 0.5
+) {
   chk_string(sequence)
   chk_string(value)
   chk_whole_number(max_gap)
@@ -62,20 +66,30 @@ ps_interpolate_sequence <- function(x, sequence = "DateTime", value = "Value",
     }
 
     if (!identical(length(unique(diff(x[[sequence]]))), 1L)) {
-      ps_error("sequence must be unique and complete (try ps_add_missing_sequence)")
+      ps_error(
+        "sequence must be unique and complete (try ps_add_missing_sequence)"
+      )
     }
     gap <- size_gaps(is.na(x[[value]]))
-    x[[value]] <- stats::approx(x[[value]],
+    x[[value]] <- stats::approx(
+      x[[value]],
       xout = seq_along(x[[value]]),
-      method = method, f = step
+      method = method,
+      f = step
     )$y
     is.na(x[[value]][gap > max_gap]) <- TRUE
     return(x)
   }
 
-  x %<>% plyr::ddply(by, ps_interpolate_sequence,
-    sequence = sequence,
-    value = value, max_gap = max_gap, method = method, step = step
-  )
+  x %<>%
+    plyr::ddply(
+      by,
+      ps_interpolate_sequence,
+      sequence = sequence,
+      value = value,
+      max_gap = max_gap,
+      method = method,
+      step = step
+    )
   x
 }
