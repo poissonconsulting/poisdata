@@ -13,13 +13,14 @@ ps_env_map_df <- function(fun, envir = parent.frame()) {
 
   names <- poisdata::ps_names_datas(envir = envir)
 
-  names %<>% purrr::map(function(x) {
-    data <- get(x, envir) %>%
-      fun(.) %>%
-      assign(x, ., envir)
+  names %<>%
+    purrr::map(function(x) {
+      data <- get(x, envir) %>%
+        fun(.) %>%
+        assign(x, ., envir)
 
-    data
-  })
+      data
+    })
 
   invisible(unlist(names))
 }

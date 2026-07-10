@@ -11,7 +11,9 @@ ps_write_data_csvs <- function(dir = ".", envir = parent.frame()) {
   chk_string(dir)
   chk_environment(envir)
 
-  if (!dir.exists(dir)) ps_error("directory '", dir, "' does not exist")
+  if (!dir.exists(dir)) {
+    ps_error("directory '", dir, "' does not exist")
+  }
 
   data_names <- ps_names_datas(envir = envir)
   if (!length(data_names)) {

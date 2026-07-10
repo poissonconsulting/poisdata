@@ -19,7 +19,8 @@ test_that("add_missing_timeseries", {
 
   datetime <- as.POSIXct("2001-01-02 03:04:06") + c(1, 2, 9, 4)
   data <- data.frame(
-    DateTime = datetime, Value = c(1, 2, 9, 4),
+    DateTime = datetime,
+    Value = c(1, 2, 9, 4),
     Group = 1
   )
 
@@ -30,7 +31,8 @@ test_that("add_missing_timeseries", {
   datetime <- as.POSIXct("2001-01-02 03:04:06") + c(1, 2, 9, 4)
   data <- data.frame(
     Value = c(1, 2, 9, 4),
-    Group = c(1, 1, 1, 3), DateTime = datetime
+    Group = c(1, 1, 1, 3),
+    DateTime = datetime
   )
   x <- ps_add_missing_sequence(data, by = "Group")
   expect_identical(x$Group, c(rep(1, 9L), 3))
