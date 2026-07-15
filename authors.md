@@ -19,12 +19,12 @@ Source:
 [`DESCRIPTION`](https://github.com/poissonconsulting/poisdata/blob/main/DESCRIPTION)
 
 Thorley J, Dalgarno S (2026). *poisdata: Read and Write Data*. R package
-version 0.0.1.9005, <https://github.com/poissonconsulting/poisdata>.
+version 0.0.1.9006, <https://github.com/poissonconsulting/poisdata>.
 
     @Manual{,
       title = {poisdata: Read and Write Data},
       author = {Joe Thorley and Seb Dalgarno},
       year = {2026},
-      note = {R package version 0.0.1.9005},
+      note = {R package version 0.0.1.9006},
       url = {https://github.com/poissonconsulting/poisdata},
     }
