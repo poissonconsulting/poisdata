@@ -19,6 +19,7 @@ ps_interpolate_sequence(
 
 \item{sequence}{A string naming the sequence column.}
 
+\item{value}{A character vector of the value column(s).}
 
 \item{by}{A character vector of columns to interpolate by.}
 

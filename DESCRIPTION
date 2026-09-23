@@ -11,7 +11,7 @@ Authors@R: c(
     )
 Description: Functions to read and write data for Poisson Consulting scripts and packages.
 License: MIT + file LICENSE
-URL: https://github.com/poissonconsulting/poisdata
+URL: https://poissonconsulting.github.io/poisdata
 BugReports: https://github.com/poissonconsulting/poisdata/issues
 Depends: R (>= 4.0.0)
 Imports:
