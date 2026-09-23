@@ -25,6 +25,7 @@ ps_interpolate_sequence <- function(
   chk_character(value)
   chk_not_empty(value)
   chk_unique(value)
+  chk_not_any_na(value)
   chk_whole_number(max_gap)
   max_gap <- as.integer(max_gap)
   chk_gte(max_gap)
