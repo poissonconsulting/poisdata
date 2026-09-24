@@ -4,7 +4,8 @@ An R package to read, write and manipulate data frames.
 
 ## Demonstration
 
-``` R
+``` r
+
 library(poisdata)
 datetime <- as.POSIXct("2001-01-02 03:04:06") + c(2, 1, 4, 7)
 data <- data.frame(DateTime = datetime, Value = c(5, 1, 3, 4))

@@ -29,7 +29,7 @@ ps_interpolate_sequence(
 
 - value:
 
-  A character vector of the value column.
+  A character vector of the value column(s).
 
 - by:
 
