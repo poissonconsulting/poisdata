@@ -4,7 +4,7 @@
 #'
 #' @param x The data.frame.
 #' @param sequence A string naming the sequence column.
-#' @param value A character vector of the value column.
+#' @param value A character vector of the value column(s).
 #' @param by A character vector of columns to interpolate by.
 #' @param max_gap A count of the maximum gap to interpolate within.
 #' @param method A string specifying the method (linear or constant).
@@ -22,7 +22,10 @@ ps_interpolate_sequence <- function(
   step = 0.5
 ) {
   chk_string(sequence)
-  chk_string(value)
+  chk_character(value)
+  chk_not_empty(value)
+  chk_unique(value)
+  chk_not_any_na(value)
   chk_whole_number(max_gap)
   max_gap <- as.integer(max_gap)
   chk_gte(max_gap)
@@ -42,8 +45,8 @@ ps_interpolate_sequence <- function(
   check_names(x, sequence)
   check_names(x, value)
 
-  if (sequence == value) {
-    ps_error("value column '", value, "' must not be the same as sequence")
+  if (sequence %in% value) {
+    ps_error("value columns must not include sequence column '", sequence, "'")
   }
 
   if (length(by)) {
@@ -51,8 +54,12 @@ ps_interpolate_sequence <- function(
     if (sequence %in% by) {
       ps_error("sequence column '", sequence, "' must not also be in by")
     }
-    if (value %in% by) {
-      ps_error("value column '", value, "' must not also be in by")
+    if (any(value %in% by)) {
+      ps_error(
+        "value columns ",
+        cc(value[value %in% by], " and "),
+        " must not also be in by"
+      )
     }
   }
 
@@ -70,14 +77,16 @@ ps_interpolate_sequence <- function(
         "sequence must be unique and complete (try ps_add_missing_sequence)"
       )
     }
-    gap <- size_gaps(is.na(x[[value]]))
-    x[[value]] <- stats::approx(
-      x[[value]],
-      xout = seq_along(x[[value]]),
-      method = method,
-      f = step
-    )$y
-    is.na(x[[value]][gap > max_gap]) <- TRUE
+    for (v in value) {
+      gap <- size_gaps(is.na(x[[v]]))
+      x[[v]] <- stats::approx(
+        x[[v]],
+        xout = seq_along(x[[v]]),
+        method = method,
+        f = step
+      )$y
+      is.na(x[[v]][gap > max_gap]) <- TRUE
+    }
     return(x)
   }
 

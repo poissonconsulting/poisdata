@@ -19,7 +19,7 @@ ps_interpolate_sequence(
 
 \item{sequence}{A string naming the sequence column.}
 
-\item{value}{A character vector of the value column.}
+\item{value}{A character vector of the value column(s).}
 
 \item{by}{A character vector of columns to interpolate by.}
 
@@ -34,5 +34,5 @@ the compromise between left- and right- continuous step function.}
 A tbl data frame sorted by sequence and by.
 }
 \description{
-Interpolates missing values in sequence using \code{\link[stats:approxfun]{stats::approx()}}
+Interpolates missing values in sequence using \code{\link[stats:approx]{stats::approx()}}
 }

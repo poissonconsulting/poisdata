@@ -21,16 +21,24 @@ export(read_hobo_csv)
 import(chk)
 import(dplyr)
 import(poisutils)
-importFrom(magrittr,"%<>%")
-importFrom(magrittr,"%>%")
+importFrom(magrittr,
+  "%<>%",
+  "%>%"
+)
 importFrom(readr,read_csv)
-importFrom(rlang,.data)
-importFrom(rlang,UQ)
-importFrom(rlang,parse_quo)
-importFrom(stringr,str_c)
-importFrom(stringr,str_detect)
-importFrom(stringr,str_extract)
-importFrom(stringr,str_replace)
-importFrom(units,drop_units)
-importFrom(units,set_units)
+importFrom(rlang,
+  .data,
+  UQ,
+  parse_quo
+)
+importFrom(stringr,
+  str_c,
+  str_detect,
+  str_extract,
+  str_replace
+)
+importFrom(units,
+  drop_units,
+  set_units
+)
 importFrom(yesno,yesno)

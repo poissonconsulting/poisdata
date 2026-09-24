@@ -11,7 +11,7 @@ Authors@R: c(
     )
 Description: Functions to read and write data for Poisson Consulting scripts and packages.
 License: MIT + file LICENSE
-URL: https://github.com/poissonconsulting/poisdata
+URL: https://poissonconsulting.github.io/poisdata
 BugReports: https://github.com/poissonconsulting/poisdata/issues
 Depends: R (>= 4.0.0)
 Imports:
@@ -39,6 +39,6 @@ Remotes: poissonconsulting/poisutils
 SystemRequirements: udunits
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.3.2.9000
 Roxygen: list(markdown = TRUE)
 Config/Needs/website: poissonconsulting/poissontemplate
+Config/roxygen2/version: 8.1.0.9000
