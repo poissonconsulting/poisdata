@@ -1,5 +1,10 @@
 # Changelog
 
+## poisdata 0.0.1.9007
+
+- Ps_interpolate_seq to accept multiple value columns
+  ([\#33](https://github.com/poissonconsulting/poisdata/issues/33)).
+
 ## poisdata 0.0.1.9006
 
 - Same as previous version.
