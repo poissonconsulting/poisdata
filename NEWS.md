@@ -1,4 +1,9 @@
-<!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
+<!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
+
+# poisdata 0.0.1.9007
+
+- Ps_interpolate_seq to accept multiple value columns (#33).
+
 
 # poisdata 0.0.1.9006
 
